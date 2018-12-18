@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757c7930830877b47944add6103cde80, type: 3}
+  m_Name: Ledger
+  m_EditorClassIdentifier: 
+  OutstandingTasks:
+  - Title: world > combat > victory > world flow
+    CreationDate: 12/17/2018 | 12:03 AM
+    CompletionDate: 
+    HasDetails: 1
+    Details: start with just a simple scene to menu flow
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.69197387, g: 0.69803923, b: 0.21960784, a: 1}
+  - Title: Create Combat Manager
+    CreationDate: 12/17/2018 | 11:06 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: 'Should initialize combat with a random enemy formation
+
+      - hold turn order
+
+      - handle scene change at the end of combat'
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.69803923, g: 0.27093503, b: 0.21960784, a: 1}
+  - Title: ' UI - design rough Main Menu'
+    CreationDate: 12/17/2018 | 12:04 AM
+    CompletionDate: 
+    HasDetails: 1
+    Details: '-add displays for stats
+
+      -add debugging toools to test save/load
+
+      -Game pauses while in menu'
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.21960784, g: 0.69803923, b: 0.3137661, a: 1}
+  - Title: Integrate controller support using CrossPlatrform
+    CreationDate: 12/17/2018 | 8:15 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.69803923, g: 0.21960784, b: 0.6187705, a: 1}
+  - Title: Create Party Class that holds multiple Heros
+    CreationDate: 12/17/2018 | 11:03 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: '- should be serializable or house a PartyData class that can be serialized
+
+      - use for access in menus combat etc...'
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.2873036, g: 0.21960784, b: 0.69803923, a: 1}
+  - Title: Modify load to support multiple save games
+    CreationDate: 12/17/2018 | 12:01 AM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.21960784, g: 0.3307875, b: 0.69803923, a: 1}
+  - Title: Modify HeroData to support multiple heros
+    CreationDate: 12/17/2018 | 12:01 AM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.21960784, g: 0.3307875, b: 0.69803923, a: 1}
+  CompletedTasks:
+  - Title: Clean up folder structure
+    CreationDate: 12/16/2018 | 11:59 PM
+    CompletionDate: 12/17/2018 | 8:13 PM
+    HasDetails: 1
+    Details: scripts in a scripts folder, plugins in plugin etc...
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.9811321, g: 0.88137287, b: 0.041651815, a: 1}
+  - Title: Create CombatInitializer
+    CreationDate: 12/17/2018 | 9:59 PM
+    CompletionDate: 12/17/2018 | 10:49 PM
+    HasDetails: 1
+    Details: 'changes scene to combat after random steps
+
+      -- will contain elements to preset scenary etc...'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.69803923, g: 0.21960784, b: 0.6187705, a: 1}
+  - Title: Create Enemy Scritable Object
+    CreationDate: 12/17/2018 | 11:07 PM
+    CompletionDate: 12/18/2018 | 12:20 AM
+    HasDetails: 1
+    Details: 'should hold HP / atk damage  for now
+
+      - soon: skills, maybe preference of atk or def
+
+      TBD'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.69803923, g: 0.27093503, b: 0.21960784, a: 1}
+  DeferredTasks: []
