@@ -7,6 +7,11 @@ using System.IO;
 public static class SaveLoad{
 
     public static void SaveHero(){
+
+        //saves current inventory to HeroData as List<int> of item_ids
+        Hero.active.inventory.SerializeInventory();
+
+        //serializes HeroData to local hard disk
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/heroData.gd");
         bf.Serialize(file, Hero.active.data);
@@ -22,6 +27,10 @@ public static class SaveLoad{
         file.Close();
 
         Hero.active.data = loadedHero;
+
+        //Loads active inventory from HeroData
+        Hero.active.inventory.DeserializeInventory();
     }
+
 }
 }

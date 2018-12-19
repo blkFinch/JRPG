@@ -5,10 +5,13 @@ using UnityEngine;
 [System.Serializable]
 public class HeroData
 {
+    public InventoryData inventoryData;
     private int _level;
     private string _name;
 
     int atk, def, agi, mag;
+
+    int hp, xp;
 
     //properties
     public int Level
@@ -75,6 +78,32 @@ public class HeroData
         set
         {
             mag = value;
+        }
+    }
+
+    public int Hp
+    {
+        get
+        {
+            return hp;
+        }
+
+        set
+        {
+            hp = value;
+        }
+    }
+
+    public int Xp
+    {
+        get
+        {
+            return xp;
+        }
+
+        set
+        {
+            xp = value;
         }
     }
 

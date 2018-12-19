@@ -8,13 +8,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adabb934ce840fd4f8d9ee634c209f1c, type: 3}
-  m_Name: Slime
+  m_Script: {fileID: 11500000, guid: 932aa176dee1c424e802dc6e08ed4fa4, type: 3}
+  m_Name: SnackBar
   m_EditorClassIdentifier: 
-  creatureName: Slime
-  atk: 5
-  def: 8
-  agi: 2
-  hp: 15
-  xp: 25
-  gold: 5
+  i_Name: SnackBar
+  i_Value: 2
+  isKeyItem: 0
+  i_Id: 2

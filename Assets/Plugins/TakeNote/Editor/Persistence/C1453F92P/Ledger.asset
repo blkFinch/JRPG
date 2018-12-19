@@ -12,6 +12,22 @@ MonoBehaviour:
   m_Name: Ledger
   m_EditorClassIdentifier: 
   OutstandingTasks:
+  - Title: 'URGENT: RE EVELAUATE PRIORITIES'
+    CreationDate: 12/18/2018 | 10:33 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: 'Make mind map
+
+      trello board
+
+      or simply rethink and make sure we are on path
+
+
+      Remember the build order!'
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.8784314, g: 0.02745098, b: 0.23609608, a: 1}
   - Title: world > combat > victory > world flow
     CreationDate: 12/17/2018 | 12:03 AM
     CompletionDate: 
@@ -85,6 +101,15 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.21960784, g: 0.3307875, b: 0.69803923, a: 1}
+  - Title: Make old school name select
+    CreationDate: 12/18/2018 | 10:33 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.12677069, g: 0.8784314, b: 0.02745098, a: 1}
   CompletedTasks:
   - Title: Clean up folder structure
     CreationDate: 12/16/2018 | 11:59 PM
@@ -119,4 +144,13 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.69803923, g: 0.27093503, b: 0.21960784, a: 1}
+  - Title: Inventory/items
+    CreationDate: 12/18/2018 | 6:38 PM
+    CompletionDate: 12/18/2018 | 10:31 PM
+    HasDetails: 1
+    Details: test savablility
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.8773585, g: 0.86588764, b: 0.028969401, a: 1}
   DeferredTasks: []
