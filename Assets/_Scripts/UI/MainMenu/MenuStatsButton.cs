@@ -18,7 +18,7 @@ public class MenuStatsButton : MonoBehaviour, ISelectHandler, IDeselectHandler {
 	}
 
 	private string Stats(){
-		return         "HP: "  + Hero.active.data.Hp +
+		return         "HP: "  + Hero.active.data.CurrentHp + " / " + Hero.active.data.Hp +
 			       "\n\nAtk: " + Hero.active.data.Atk +
 			       "\n\nDef: " + Hero.active.data.Def +
 			       "\n\nAgi: " + Hero.active.data.Def +

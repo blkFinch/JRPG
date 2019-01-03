@@ -28,15 +28,26 @@ public class GameManager : MonoBehaviour
     {
         Hero.active.data.Name = name;
     }
-
-
-    // TODO: consider breaking this into seperate functions - load combat, load map etc...
-    public void LoadScene(string sceneName)
-    {
-        StartCoroutine(LoadAsyncScene(sceneName));
+    
+    // COMBAT STUFF  
+    public void LoadCombat(){
+        Hero.active.SerializeLocation();
+        LoadScene("Combat");
+    }
+    public void ReturnToWorld(){
+        LoadScene("World", true);
+        
     }
 
-    IEnumerator LoadAsyncScene(string sceneName)
+    //LEVEL MANAGEMENT
+
+    // TODO: consider breaking this into seperate functions - load combat, load map etc...
+    public void LoadScene(string sceneName, bool deserialize = false)
+    {
+        StartCoroutine(LoadAsyncScene(sceneName, deserialize));
+    }
+
+    IEnumerator LoadAsyncScene(string sceneName, bool deserialize)
     {
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
@@ -48,6 +59,8 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
+
+        if(deserialize){ Hero.active.DeserializeLocation(); }
     }
 
 }

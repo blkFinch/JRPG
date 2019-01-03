@@ -11,6 +11,7 @@ public class Inventory{
 	}
 
 	public void UseItem(Item item){
+		item.onUseItem.OnConsume();
 		items.Remove(item);
 	}
 

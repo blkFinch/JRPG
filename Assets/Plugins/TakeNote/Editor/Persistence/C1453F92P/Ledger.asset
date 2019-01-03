@@ -12,95 +12,37 @@ MonoBehaviour:
   m_Name: Ledger
   m_EditorClassIdentifier: 
   OutstandingTasks:
-  - Title: 'URGENT: RE EVELAUATE PRIORITIES'
-    CreationDate: 12/18/2018 | 10:33 PM
-    CompletionDate: 
-    HasDetails: 1
-    Details: 'Make mind map
-
-      trello board
-
-      or simply rethink and make sure we are on path
-
-
-      Remember the build order!'
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.8784314, g: 0.02745098, b: 0.23609608, a: 1}
-  - Title: world > combat > victory > world flow
-    CreationDate: 12/17/2018 | 12:03 AM
-    CompletionDate: 
-    HasDetails: 1
-    Details: start with just a simple scene to menu flow
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.69197387, g: 0.69803923, b: 0.21960784, a: 1}
-  - Title: Create Combat Manager
-    CreationDate: 12/17/2018 | 11:06 PM
-    CompletionDate: 
-    HasDetails: 1
-    Details: 'Should initialize combat with a random enemy formation
-
-      - hold turn order
-
-      - handle scene change at the end of combat'
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.69803923, g: 0.27093503, b: 0.21960784, a: 1}
-  - Title: ' UI - design rough Main Menu'
-    CreationDate: 12/17/2018 | 12:04 AM
-    CompletionDate: 
-    HasDetails: 1
-    Details: '-add displays for stats
-
-      -add debugging toools to test save/load
-
-      -Game pauses while in menu'
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.21960784, g: 0.69803923, b: 0.3137661, a: 1}
-  - Title: Integrate controller support using CrossPlatrform
-    CreationDate: 12/17/2018 | 8:15 PM
+  - Title: Clear items from menu screen on deselect
+    CreationDate: 12/30/2018 | 10:22 PM
     CompletionDate: 
     HasDetails: 0
     Details: 
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
-    DrawColor: {r: 0.69803923, g: 0.21960784, b: 0.6187705, a: 1}
-  - Title: Create Party Class that holds multiple Heros
-    CreationDate: 12/17/2018 | 11:03 PM
+    DrawColor: {r: 0.8466195, g: 1, b: 0, a: 1}
+  - Title: Add ink integration
+    CreationDate: 12/30/2018 | 10:22 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0, g: 0.092921734, b: 1, a: 1}
+  - Title: Clean up file tree
+    CreationDate: 12/22/2018 | 1:52 PM
     CompletionDate: 
     HasDetails: 1
-    Details: '- should be serializable or house a PartyData class that can be serialized
+    Details: '- extract standard asset scripts
 
-      - use for access in menus combat etc...'
+      - delete unused assets
+
+      - seperate materials and shaders'
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
-    DrawColor: {r: 0.2873036, g: 0.21960784, b: 0.69803923, a: 1}
-  - Title: Modify load to support multiple save games
-    CreationDate: 12/17/2018 | 12:01 AM
-    CompletionDate: 
-    HasDetails: 0
-    Details: 
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.21960784, g: 0.3307875, b: 0.69803923, a: 1}
-  - Title: Modify HeroData to support multiple heros
-    CreationDate: 12/17/2018 | 12:01 AM
-    CompletionDate: 
-    HasDetails: 0
-    Details: 
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.21960784, g: 0.3307875, b: 0.69803923, a: 1}
+    DrawColor: {r: 0, g: 1, b: 0.49818873, a: 1}
   - Title: Make old school name select
     CreationDate: 12/18/2018 | 10:33 PM
     CompletionDate: 
@@ -110,6 +52,26 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.12677069, g: 0.8784314, b: 0.02745098, a: 1}
+  - Title: Add visual elements to combat
+    CreationDate: 12/23/2018 | 6:04 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: '-spawn enemy(ies) on screen as text elements
+
+      -allow targeting for player attack'
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0, b: 0.91679955, a: 1}
+  - Title: Add multiple enemies to combat
+    CreationDate: 12/23/2018 | 6:04 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0, b: 0.91679955, a: 1}
   CompletedTasks:
   - Title: Clean up folder structure
     CreationDate: 12/16/2018 | 11:59 PM
@@ -153,4 +115,150 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.8773585, g: 0.86588764, b: 0.028969401, a: 1}
-  DeferredTasks: []
+  - Title: 'URGENT: RE EVELAUATE PRIORITIES'
+    CreationDate: 12/18/2018 | 10:33 PM
+    CompletionDate: 12/19/2018 | 10:58 PM
+    HasDetails: 1
+    Details: 'Make mind map
+
+      trello board
+
+      or simply rethink and make sure we are on path
+
+
+      Remember the build order!'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.8784314, g: 0.02745098, b: 0.23609608, a: 1}
+  - Title: ' UI - design rough Main Menu'
+    CreationDate: 12/17/2018 | 12:04 AM
+    CompletionDate: 12/19/2018 | 11:10 PM
+    HasDetails: 1
+    Details: '-add displays for stats
+
+      -add debugging toools to test save/load
+
+      -Game pauses while in menu'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.21960784, g: 0.69803923, b: 0.3137661, a: 1}
+  - Title: Create Combat Manager
+    CreationDate: 12/17/2018 | 11:06 PM
+    CompletionDate: 12/22/2018 | 11:16 AM
+    HasDetails: 1
+    Details: 'Should initialize combat with a random enemy formation
+
+      - hold turn order
+
+      - handle scene change at the end of combat'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.69803923, g: 0.27093503, b: 0.21960784, a: 1}
+  - Title: start trello board
+    CreationDate: 12/19/2018 | 10:59 PM
+    CompletionDate: 12/22/2018 | 11:17 AM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 1, b: 1, a: 1}
+  - Title: Serialize location and scene data
+    CreationDate: 12/19/2018 | 11:05 PM
+    CompletionDate: 12/22/2018 | 1:19 PM
+    HasDetails: 1
+    Details: return player to exact location on map in correct scene
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.8277414, g: 0.85882354, b: 0.043137245, a: 1}
+  - Title: design use item system
+    CreationDate: 12/19/2018 | 10:59 PM
+    CompletionDate: 12/23/2018 | 5:58 PM
+    HasDetails: 1
+    Details: "ConsumeableAction \nmake scriptable objects heal, mp, etc...\n"
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.8584906, g: 0.044544328, b: 0.59260017, a: 1}
+  - Title: Add gameover condition and lose screen
+    CreationDate: 12/23/2018 | 6:14 PM
+    CompletionDate: 12/27/2018 | 7:25 PM
+    HasDetails: 1
+    Details: when current hp drops below 0 go to game over screen
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0.9128059, b: 0, a: 1}
+  - Title: Add victory spoils to combat
+    CreationDate: 12/24/2018 | 9:15 AM
+    CompletionDate: 12/27/2018 | 7:25 PM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0.9128059, b: 0, a: 1}
+  - Title: research listeners / delegates
+    CreationDate: 12/19/2018 | 10:30 PM
+    CompletionDate: 12/27/2018 | 7:25 PM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 1, b: 1, a: 1}
+  DeferredTasks:
+  - Title: world > combat > victory > world flow
+    CreationDate: 12/17/2018 | 12:03 AM
+    CompletionDate: 
+    HasDetails: 1
+    Details: 'start with just a simple scene to menu flow
+
+
+      -- add in victory calculation menu'
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.69197387, g: 0.69803923, b: 0.21960784, a: 1}
+  - Title: Integrate controller support using CrossPlatrform
+    CreationDate: 12/17/2018 | 8:15 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.69803923, g: 0.21960784, b: 0.6187705, a: 1}
+  - Title: Create Party Class that holds multiple Heros
+    CreationDate: 12/17/2018 | 11:03 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: '- should be serializable or house a PartyData class that can be serialized
+
+      - use for access in menus combat etc...'
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.2873036, g: 0.21960784, b: 0.69803923, a: 1}
+  - Title: Modify load to support multiple save games
+    CreationDate: 12/17/2018 | 12:01 AM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.21960784, g: 0.3307875, b: 0.69803923, a: 1}
+  - Title: Modify HeroData to support multiple heros
+    CreationDate: 12/17/2018 | 12:01 AM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.21960784, g: 0.3307875, b: 0.69803923, a: 1}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput; //TODO: extract this to be only in player controller
 
 public class RandomCombatGenerator : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class RandomCombatGenerator : MonoBehaviour
 
     public void LoadCombat()
     {
-        GameManager.gm.LoadScene("Combat");
+        GameManager.gm.LoadCombat();
     }
 
     IEnumerator CheckCombat()
@@ -55,6 +56,16 @@ public class RandomCombatGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float h = CrossPlatformInputManager.GetAxis("Horizontal");
+        float v = CrossPlatformInputManager.GetAxis("Vertical");
 
+        if (h != 0)
+        {
+            isWalking = true;
+        }
+        else
+        {
+            isWalking = false;
+        }
     }
 }

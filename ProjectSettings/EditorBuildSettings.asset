@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/_Scenes/Title/init.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/_Scenes/WorldMap/World.unity
+    path: Assets/_Scenes/World/World.unity
     guid: 9fadf9167854f5747b890b5ebfae29fe
   - enabled: 1
     path: Assets/_Scenes/Combat/Combat.unity
     guid: 14654d509c7381742966677c3237971c
+  - enabled: 1
+    path: Assets/_Scenes/Title/GameOver.unity
+    guid: e3bc9cf17a424454bb818ec881fd0154
   m_configObjects: {}

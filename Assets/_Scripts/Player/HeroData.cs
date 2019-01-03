@@ -11,7 +11,13 @@ public class HeroData
 
     int atk, def, agi, mag;
 
+    int gold;
+
     int hp, xp;
+
+    int currentHp;
+
+    float loc_X, loc_Y, loc_Z;
 
     //properties
     public int Level
@@ -19,7 +25,7 @@ public class HeroData
         get { return _level; }
         set
         {
-            if (value > 1) { _level = value; }
+             _level = value; 
         }
     }
 
@@ -107,4 +113,69 @@ public class HeroData
         }
     }
 
+    public float Loc_X
+    {
+        get
+        {
+            return loc_X;
+        }
+
+        set
+        {
+            loc_X = value;
+        }
+    }
+
+    public float Loc_Y
+    {
+        get
+        {
+            return loc_Y;
+        }
+
+        set
+        {
+            loc_Y = value;
+        }
+    }
+
+    public float Loc_Z
+    {
+        get
+        {
+            return loc_Z;
+        }
+
+        set
+        {
+            loc_Z = value;
+        }
+    }
+
+    public int CurrentHp
+    {
+        get
+        {
+            return currentHp;
+        }
+
+        set
+        {
+            currentHp = value;
+            if (currentHp > hp){currentHp = hp;}
+        }
+    }
+
+    public int Gold
+    {
+        get
+        {
+            return gold;
+        }
+
+        set
+        {
+            gold = value;
+        }
+    }
 }
