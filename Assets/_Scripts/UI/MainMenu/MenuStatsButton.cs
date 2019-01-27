@@ -8,8 +8,13 @@ public class MenuStatsButton : MonoBehaviour, ISelectHandler, IDeselectHandler {
 
 	//TODO: make this generate a proper stats panel
 	public Text statsDisplay;
+
+	public delegate void MenuStatsSelected();
+	public event MenuStatsSelected notifyStatsTabObservers;
+
 	public void OnSelect(BaseEventData eventData){
 		statsDisplay.text = Stats();
+		notifyStatsTabObservers();
 	}
 
 	//clears the text display

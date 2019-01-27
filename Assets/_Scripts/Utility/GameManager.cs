@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public ItemDatabase itemDatabase;
 
+
     public static GameManager gm;
     private void Awake()
     {
@@ -23,17 +24,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gm.gameObject);
     }
 
-    //TODO: consider renaming as "NameHero"
-    public void CreateNewHero(string name)
-    {
-        Hero.active.data.Name = name;
-    }
-    
+
     // COMBAT STUFF  
+
     public void LoadCombat(){
         Hero.active.SerializeLocation();
         LoadScene("Combat");
     }
+
     public void ReturnToWorld(){
         LoadScene("World", true);
         
@@ -63,4 +61,9 @@ public class GameManager : MonoBehaviour
         if(deserialize){ Hero.active.DeserializeLocation(); }
     }
 
+    //DEBUGGING TODO: Remove later
+    public void CreateNewHero(string name)
+    {
+        Hero.active.data.Name = name;
+    }
 }

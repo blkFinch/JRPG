@@ -12,46 +12,24 @@ MonoBehaviour:
   m_Name: Ledger
   m_EditorClassIdentifier: 
   OutstandingTasks:
-  - Title: Clear items from menu screen on deselect
-    CreationDate: 12/30/2018 | 10:22 PM
-    CompletionDate: 
-    HasDetails: 0
-    Details: 
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.8466195, g: 1, b: 0, a: 1}
   - Title: Add ink integration
     CreationDate: 12/30/2018 | 10:22 PM
     CompletionDate: 
-    HasDetails: 0
-    Details: 
+    HasDetails: 1
+    Details: player movement disabled while in dialoge?
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0, g: 0.092921734, b: 1, a: 1}
-  - Title: Clean up file tree
-    CreationDate: 12/22/2018 | 1:52 PM
-    CompletionDate: 
-    HasDetails: 1
-    Details: '- extract standard asset scripts
-
-      - delete unused assets
-
-      - seperate materials and shaders'
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0, g: 1, b: 0.49818873, a: 1}
-  - Title: Make old school name select
-    CreationDate: 12/18/2018 | 10:33 PM
+  - Title: Standardize combat menu / main menu
+    CreationDate: 1/3/2019 | 10:23 PM
     CompletionDate: 
     HasDetails: 0
     Details: 
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
-    DrawColor: {r: 0.12677069, g: 0.8784314, b: 0.02745098, a: 1}
+    DrawColor: {r: 0.42770475, g: 0.22895159, b: 0.990566, a: 1}
   - Title: Add visual elements to combat
     CreationDate: 12/23/2018 | 6:04 PM
     CompletionDate: 
@@ -63,15 +41,24 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 1, g: 0, b: 0.91679955, a: 1}
-  - Title: Add multiple enemies to combat
-    CreationDate: 12/23/2018 | 6:04 PM
+  - Title: 'BUG: active choice selection'
+    CreationDate: 1/20/2019 | 7:34 PM
     CompletionDate: 
-    HasDetails: 0
-    Details: 
+    HasDetails: 1
+    Details: Index 0 being chosen on the second time dialogue is opened
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
-    DrawColor: {r: 1, g: 0, b: 0.91679955, a: 1}
+    DrawColor: {r: 1, g: 0, b: 0, a: 1}
+  - Title: 'BUG: Scene does not reset'
+    CreationDate: 1/24/2019 | 5:58 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: after choosing options to end dialogue tree, scene does not reset
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0, b: 0, a: 1}
   CompletedTasks:
   - Title: Clean up folder structure
     CreationDate: 12/16/2018 | 11:59 PM
@@ -211,6 +198,66 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 1, g: 1, b: 1, a: 1}
+  - Title: Clear items from menu screen on deselect
+    CreationDate: 12/30/2018 | 10:22 PM
+    CompletionDate: 1/3/2019 | 10:20 PM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.8466195, g: 1, b: 0, a: 1}
+  - Title: Create PlayerController.cs remove Thirdpersoncontrol
+    CreationDate: 1/12/2019 | 8:48 PM
+    CompletionDate: 1/12/2019 | 9:11 PM
+    HasDetails: 1
+    Details: 'This should entirely replace the standard asset script
+
+      should include delgate and observer pattern for action buttons etc...'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.37742668, g: 0.8113208, b: 0, a: 1}
+  - Title: move menu buttton to player control script
+    CreationDate: 1/13/2019 | 5:40 PM
+    CompletionDate: 1/13/2019 | 7:10 PM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 0
+    DrawColor: {r: 1, g: 1, b: 1, a: 1}
+  - Title: InputManager
+    CreationDate: 1/18/2019 | 6:40 PM
+    CompletionDate: 1/18/2019 | 7:24 PM
+    HasDetails: 1
+    Details: InputManager should be static and handles the input state management
+      and exposing all player input allowing other classes to access it as needed
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0.9243814, b: 0, a: 1}
+  - Title: Duplicated Button Bug
+    CreationDate: 1/19/2019 | 9:01 PM
+    CompletionDate: 1/20/2019 | 3:01 PM
+    HasDetails: 1
+    Details: On selecting a button, duplicate buttons appear for a second before being
+      destroyed. I think this may be because the TalkingObject script is calling the
+      Dialogue manager before it finishes clearing the canvas
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0.4366586, b: 0.4198113, a: 1}
+  - Title: Add Choices to Ink integration
+    CreationDate: 1/13/2019 | 7:32 PM
+    CompletionDate: 1/20/2019 | 4:59 PM
+    HasDetails: 1
+    Details: Dialogue manager listens for a button to be selected and then sends a
+      request for an updated story to the talking object
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.16343297, g: 0.031772893, b: 0.9622642, a: 1}
   DeferredTasks:
   - Title: world > combat > victory > world flow
     CreationDate: 12/17/2018 | 12:03 AM
@@ -262,3 +309,43 @@ MonoBehaviour:
     IsDeferred: 1
     IsColored: 1
     DrawColor: {r: 0.21960784, g: 0.3307875, b: 0.69803923, a: 1}
+  - Title: Make old school name select
+    CreationDate: 12/18/2018 | 10:33 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.12677069, g: 0.8784314, b: 0.02745098, a: 1}
+  - Title: Add multiple enemies to combat
+    CreationDate: 12/23/2018 | 6:04 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 1, g: 0, b: 0.91679955, a: 1}
+  - Title: deserialize player location on load
+    CreationDate: 1/16/2019 | 8:53 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 1, g: 0, b: 0, a: 1}
+  - Title: Clean up file tree
+    CreationDate: 12/22/2018 | 1:52 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: '- extract standard asset scripts
+
+      - delete unused assets
+
+      - seperate materials and shaders'
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0, g: 1, b: 0.49818873, a: 1}

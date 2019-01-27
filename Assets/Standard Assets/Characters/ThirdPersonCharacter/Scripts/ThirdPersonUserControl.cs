@@ -13,7 +13,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
-        
+        //action button delegate will fire whenever 'Action Button' is hit 
+
+        public delegate void OnActionButton();
+        public event OnActionButton notifyActionButtonObservers;
         private void Start()
         {
             // get the transform of the main camera
@@ -38,6 +41,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+            }
+
+            if(Input.GetKeyDown(KeyCode.Return) || CrossPlatformInputManager.GetButtonDown("Fire1")){
+                notifyActionButtonObservers();
             }
         }
 

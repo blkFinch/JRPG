@@ -4,20 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MenuSaveButton : MonoBehaviour, ISelectHandler, IDeselectHandler {
+public class MenuSaveButton : MonoBehaviour, ISelectHandler, IDeselectHandler
+{
 
-		public Text display;
-	public void OnSelect(BaseEventData eventData){
-        
-       display.text = "Save Game? This will overwrite previous save...";
-	}
+    public Text display;
 
-	//clears the text display
-	public void OnDeselect(BaseEventData eventData){
-		display.text = " ";
-	}
+	public delegate void MenuSaveSelected();
+	public event MenuSaveSelected notifyMenuTabObservers;
+    public void OnSelect(BaseEventData eventData)
+    {
 
-	public void OnClick(){
-		SaveLoad.SaveHero();
-	}
+		notifyMenuTabObservers();
+
+        display.text = "Save Game? This will overwrite previous save...";
+    }
+
+    //clears the text display
+    public void OnDeselect(BaseEventData eventData)
+    {
+        display.text = " ";
+    }
+
+    public void OnClick()
+    {
+        SaveLoad.SaveHero();
+    }
 }

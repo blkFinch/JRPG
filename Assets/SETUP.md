@@ -1,0 +1,1 @@
+make sure every ink script has "default" scene

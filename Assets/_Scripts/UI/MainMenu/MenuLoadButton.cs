@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class MenuLoadButton : MonoBehaviour, ISelectHandler, IDeselectHandler {
 
-		public Text display;
+	public Text display;
 	public void OnSelect(BaseEventData eventData){
         
        display.text = "Load Game? You will lose unsaved data...";
