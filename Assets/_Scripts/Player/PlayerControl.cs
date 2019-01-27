@@ -15,9 +15,6 @@ public class PlayerControl : MonoBehaviour {
 	private Vector3 m_Move;
 	private Vector3 _stop = new Vector3(0,0,0);
 
-	public bool directMode;
-
-
 
 	private void Start()
 	{
@@ -69,6 +66,10 @@ public class PlayerControl : MonoBehaviour {
 		}
 		// pass all parameters to the character control script
 		m_Character.Move(m_Move, false, false); //crouch and jump are both false until I write my own movement script - finch
+
+		if(m_Move.magnitude > 0){
+
+		}
 	}
 
 }

@@ -8,8 +8,12 @@ public enum InputMode{DirectControl, DialogueSelect, MenuSelect}
 
 public class InputManager : MonoBehaviour {
 
-	
+	//Accessors for inputs
 	public InputMode inputMode = InputMode.DirectControl;
+	public bool isWalking;
+	float _v; //vertical axis
+	float _h; //horizontal axis
+
 	
 	public delegate void OnActionButton(); //action button delegate will fire whenever 'Action Button' is hit 
 	public event OnActionButton notifyActionButtonObservers;
@@ -53,6 +57,9 @@ public class InputManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		_v = CrossPlatformInputManager.GetAxisRaw("Vertical");
+		_h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+		
 		if(Input.GetKeyDown(KeyCode.Return) || CrossPlatformInputManager.GetButtonDown("Fire1")){
 			if(notifyActionButtonObservers != null ){ notifyActionButtonObservers(); }
 		}
@@ -85,14 +92,14 @@ public class InputManager : MonoBehaviour {
 	}
 
 	void ProcessMovement(){
-		
+		//Random combat generator needs to know if player is walking
+		if (_h != 0 || _v != 0) { isWalking = true ; }
+        else                    { isWalking = false; }
 	}
 
 	void ProcessDialogueSelect(){
-		float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
 		
-
-		if(v == 1){
+		if(_v == 1){
 			if(axisInUse == false){
 				axisInUse = true;
 				dm.NavigateUp();
@@ -100,14 +107,14 @@ public class InputManager : MonoBehaviour {
 				
 		}
 
-		if(v == -1){
+		if(_v == -1){
 			if(axisInUse == false){
 				axisInUse = true;
 				dm.NavigateDown();
 			}	
 		}
 
-		if(v == 0 ){
+		if(_v == 0 ){
 			axisInUse = false;
 		}
 	}

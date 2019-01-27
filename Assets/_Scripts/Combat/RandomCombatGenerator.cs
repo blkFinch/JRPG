@@ -16,8 +16,6 @@ public class RandomCombatGenerator : MonoBehaviour
     private int _combatTrigger = 5;
     private int _stepsTaken = 0;
 
-    bool isWalking;
-
     // Use this for initialization
     void Start()
     {
@@ -36,36 +34,23 @@ public class RandomCombatGenerator : MonoBehaviour
         // while(player.isWalking)
         while (combatActive)
         {
-            _combatTrigger = Random.Range(0, stepsUntilCombat);
+            if(InputManager.im.isWalking){
+                _combatTrigger = Random.Range(0, stepsUntilCombat);
 
-            Debug.Log("combat trigger = " + _combatTrigger);
+                Debug.Log("combat trigger = " + _combatTrigger);
 
-            if (_combatTrigger < _stepsTaken)
-            {
-                combatActive = false;
-                LoadCombat();
+                if (_combatTrigger < _stepsTaken)
+                {
+                    combatActive = false;
+                    LoadCombat();
+                }
+                else
+                {
+                    
+                    _stepsTaken++;
+                }
             }
-            else
-            {
-                _stepsTaken++;
-                yield return new WaitForSeconds(0.7f); //TODO: maybe find a way of measuring steps better
-            }
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        float h = CrossPlatformInputManager.GetAxis("Horizontal");
-        float v = CrossPlatformInputManager.GetAxis("Vertical");
-
-        if (h != 0)
-        {
-            isWalking = true;
-        }
-        else
-        {
-            isWalking = false;
+            yield return new WaitForSeconds(0.7f); //TODO: maybe find a way of measuring steps better
         }
     }
 }
