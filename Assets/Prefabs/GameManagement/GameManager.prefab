@@ -64,3 +64,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb27e07d985795479efadc2b61c6444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputMode: 0
+  isWalking: 0

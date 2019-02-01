@@ -7,5 +7,17 @@ using UnityEngine;
 public class EnemyFormation : ScriptableObject {
     [SerializeField]
     private Creature[] enemies;
-    
+
+    public Creature[] Enemies
+    {
+        get
+        {
+            return enemies;
+        }
+
+        set
+        {
+            enemies = value;
+        }
+    }
 }

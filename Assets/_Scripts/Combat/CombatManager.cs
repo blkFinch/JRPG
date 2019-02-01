@@ -1,12 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Linq;
 
 public class CombatManager : MonoBehaviour
 {
 
-    //TODO: make this a scriptable called Enemy formation
-    public Creature enemy;
+    //ENEMY FORMATION
+    //
+    public EnemyFormation formation;
+    Creature activeEnemy; 
+    private GameObject enemySprite;
+    public Canvas combatCanvas;
+
+
+    //UTILITY
+    //
     private bool playerTurn;
     private ArrayList turnOrder;
     private List<Creature> defeatedEnemies;
@@ -29,8 +39,21 @@ public class CombatManager : MonoBehaviour
     private void SpawnEnemies()
     {
         //foreach enemy in EnemyFormation.enemies spawn obj 
-        enemy.init();
-        Debug.Log("Enemy Appear: " + enemy.CreatureName + " HP: " + enemy.Hp);
+        // enemy.init();
+        // Debug.Log("Enemy Appear: " + enemy.CreatureName + " HP: " + enemy.Hp);
+
+        foreach (var enemy in formation.Enemies)
+        {
+
+            enemySprite = new GameObject(enemy.name);
+            enemySprite.AddComponent<Image>();
+            enemySprite.GetComponent<Image>().sprite = enemy.Sprite;
+            enemySprite.transform.SetParent(combatCanvas.transform);
+
+            //for now just sets currentHp to max
+            enemy.init();
+        }
+
     }
 
     /*
@@ -42,20 +65,42 @@ public class CombatManager : MonoBehaviour
     private void CalculateTurnOrder()
     {
         turnOrder = new ArrayList();
+        bool heroAdded = false;
+    
+        IEnumerable<Creature> orderedAttackers = formation.Enemies.OrderByDescending( creature => creature.Agi);
 
-        //logic for calculating order of multiple heros/enemies will go here 
+        foreach(var creature in orderedAttackers){
 
-        if (_hero.data.Agi > enemy.Agi)
-        {
-            turnOrder.Add(_hero);
-            turnOrder.Add(enemy);
+            if ( !heroAdded && _hero.data.Agi > creature.Agi)
+            {
+                turnOrder.Add(_hero);
+                heroAdded = true;
+                Debug.Log("adding hero");
+            }
+            turnOrder.Add(creature);
+            Debug.Log("adding creature " + creature.name);
         }
-        else
+
+    }
+
+     /*
+        For now main combat loop:
+        -MainCombatLoop -- checks which turn it is 
+        -Enemy Turn || PlayerTurn  
+        -Rotate Order -- calls CheckForKo 
+        -MainCombatLoop
+     */
+    private void MainCombatLoop()
+    {
+
+        var activeAgent = turnOrder[0];
+        playerTurn = activeAgent.GetType() == typeof(Hero);
+
+        if (!playerTurn)
         {
-            turnOrder.Add(enemy);
-            turnOrder.Add(_hero);
+            this.activeEnemy = activeAgent as Creature;
+            StartCoroutine(EnemyTurn());
         }
-        Debug.Log("turn order: " + turnOrder[0] + " " + turnOrder[1]);
     }
 
 
@@ -63,14 +108,15 @@ public class CombatManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1); //just for pacing for now but could become ATB system
 
-        int damage = CalculateDamage(enemy.Atk, _hero.data.Def);
+        int damage = CalculateDamage(activeEnemy.Atk, _hero.data.Def);
 
         //TODO: calculate dodge
 
         Debug.Log(
-            enemy + "attacked " + _hero.data.Name + " for " + damage
+            activeEnemy + "attacked " + _hero.data.Name + " for " + damage
             );
 
+        //extract this out to hero class
         _hero.data.CurrentHp -= damage;
 
         RotateOrder();
@@ -81,14 +127,18 @@ public class CombatManager : MonoBehaviour
     {
         if (playerTurn)
         {
-            int damage = CalculateDamage(_hero.data.Atk, enemy.Def);
+            foreach (var enemy in formation.Enemies)
+            {
+                
+                int damage = CalculateDamage(_hero.data.Atk, enemy.Def);
 
-            Debug.Log(
-                _hero.data.Name + "attacked " + enemy + " for " + damage
-                );
+                Debug.Log(
+                    _hero.data.Name + "attacked " + enemy + " for " + damage
+                    );
 
-            enemy.CurrentHp -= damage;
-            playerTurn = false;
+                enemy.CurrentHp -= damage;
+                playerTurn = false;
+            }
 
             RotateOrder();
         }
@@ -110,11 +160,13 @@ public class CombatManager : MonoBehaviour
         }
 
         //todo: foreach in EnemeyFormation.enemies
-
-        if (enemy.CurrentHp <= 0)
+        foreach (var enemy in formation.Enemies)
         {
-            Debug.Log(enemy.CreatureName + "was knocked out!");
-            KoEnemy(enemy);
+            if (enemy.CurrentHp <= 0)
+            {
+                Debug.Log(enemy.CreatureName + "was knocked out!");
+                KoEnemy(enemy);
+            }
         }
     }
 
@@ -126,10 +178,14 @@ public class CombatManager : MonoBehaviour
 
     private void CheckForVictory()
     {
-        if (!turnOrder.Contains(enemy))
-        { //this needs to be rewritten to allow formations
-            Debug.Log("Victory!!");
-            Victory();
+        foreach (var enemy in formation.Enemies)
+        {
+            
+            if (!turnOrder.Contains(enemy))
+            { //this needs to be rewritten to allow formations
+                Debug.Log("Victory!!");
+                Victory();
+            }
         }
     }
 
@@ -157,25 +213,4 @@ public class CombatManager : MonoBehaviour
 
         MainCombatLoop();
     }
-
-    /*
-        For now main combat loop:
-        -MainCombatLoop -- checks which turn it is 
-        -Enemy Turn || PlayerTurn  
-        -Rotate Order -- calls CheckForKo 
-        -MainCombatLoop
-     */
-
-    private void MainCombatLoop()
-    {
-
-        var activeAgent = turnOrder[0];
-        playerTurn = activeAgent.GetType() == typeof(Hero);
-
-        if (!playerTurn)
-        {
-            StartCoroutine(EnemyTurn());
-        }
-    }
-
 }

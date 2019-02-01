@@ -15,6 +15,9 @@ public class Creature : ScriptableObject {
 
     private int currentHp;
 
+    [SerializeField]
+    private Sprite sprite;
+
     public int Atk
     {
         get
@@ -86,6 +89,19 @@ public class Creature : ScriptableObject {
         set
         {
             currentHp = value;
+        }
+    }
+
+    public Sprite Sprite
+    {
+        get
+        {
+            return sprite;
+        }
+
+        set
+        {
+            sprite = value;
         }
     }
 

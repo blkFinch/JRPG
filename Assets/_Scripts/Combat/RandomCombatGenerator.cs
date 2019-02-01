@@ -30,14 +30,13 @@ public class RandomCombatGenerator : MonoBehaviour
     IEnumerator CheckCombat()
     {
         Debug.Log("check combat has begun");
-        //TODO: make a delegate or public bool on player controler = isWalking?
-        // while(player.isWalking)
+
         while (combatActive)
         {
             if(InputManager.im.isWalking){
                 _combatTrigger = Random.Range(0, stepsUntilCombat);
 
-                Debug.Log("combat trigger = " + _combatTrigger);
+                // Debug.Log("combat trigger = " + _combatTrigger);
 
                 if (_combatTrigger < _stepsTaken)
                 {
