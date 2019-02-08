@@ -46,6 +46,15 @@ public class Hero : MonoBehaviour
         inventory.items = new List<Item>();
     }
 
+    public void TakeDamage(int damage){
+        this.data.CurrentHp -= damage;
+        if (this.data.CurrentHp <= 0)
+        {
+            Debug.Log(this.data.Name + "was knocked out!");
+            GameManager.gm.LoadScene("GameOver");
+        }
+    }
+
     public void SerializeLocation(){
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         this.data.Loc_X = player.transform.position.x;

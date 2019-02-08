@@ -104,18 +104,5 @@ public class Creature : ScriptableObject {
             sprite = value;
         }
     }
-
-    // TODO: consider adding more fields to creature:
-    //
-    // public string sk_primary, sk_secondary;
-    // public int dmg_primary, dmg_secondary;
-
-    public void init() {
-        Debug.Log(creatureName + " awake!");
-        currentHp = hp;
-    }
-
-    private void OnDestroy() {
-        Debug.Log(creatureName + " destroyed!");
-    }
+   
 }

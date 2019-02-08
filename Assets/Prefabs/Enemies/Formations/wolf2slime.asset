@@ -11,4 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8137422016e85141b0dd52327872cf6, type: 3}
   m_Name: wolf2slime
   m_EditorClassIdentifier: 
-  enemies: []
+  enemies:
+  - {fileID: 11400000, guid: a7be4935824178247b320d170ab8acd0, type: 2}
+  - {fileID: 11400000, guid: 4283665d5256789479eed39e5bc96af8, type: 2}
+  - {fileID: 11400000, guid: a7be4935824178247b320d170ab8acd0, type: 2}

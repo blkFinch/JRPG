@@ -14,7 +14,8 @@ MonoBehaviour:
   creatureName: Wolf
   atk: 5
   def: 1
-  agi: 1
+  agi: 10
   hp: 6
   xp: 25
   gold: 3
+  sprite: {fileID: 21300012, guid: 7c96099ac09b2be4dac376416f309aad, type: 3}

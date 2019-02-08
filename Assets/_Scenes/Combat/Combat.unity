@@ -283,7 +283,7 @@ Prefab:
         type: 2}
       propertyPath: formation
       value: 
-      objectReference: {fileID: 11400000, guid: febc67f1b74103c44850609cce328431,
+      objectReference: {fileID: 11400000, guid: 291578ba9f709c44c9ae33f9143fd8cb,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcc22dc3aaa6ad944bd10efc2de189b3, type: 2}
