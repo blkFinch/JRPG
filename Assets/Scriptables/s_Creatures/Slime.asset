@@ -14,7 +14,7 @@ MonoBehaviour:
   creatureName: Slime
   atk: 4
   def: 1
-  agi: 1
+  agi: 8
   hp: 8
   xp: 15
   gold: 10

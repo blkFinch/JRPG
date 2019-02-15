@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224119125048559850}
   - component: {fileID: 222148056446600428}
   - component: {fileID: 114655065123713582}
+  - component: {fileID: 114005343235043150}
   m_Layer: 5
   m_Name: EnemyBody
   m_TagString: Untagged
@@ -28,6 +29,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114005343235043150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237759863091818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e9b03c65d849245923e1593342fd0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agi: 0
+  atk: 0
+  def: 0
+  maxHp: 0
+  currentHp: 0
+  _name: 
+  sprite: {fileID: 0}
+  creatureTemplate: {fileID: 0}
 --- !u!114 &114655065123713582
 MonoBehaviour:
   m_ObjectHideFlags: 1

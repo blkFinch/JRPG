@@ -12,15 +12,6 @@ MonoBehaviour:
   m_Name: Ledger
   m_EditorClassIdentifier: 
   OutstandingTasks:
-  - Title: Add ink integration
-    CreationDate: 12/30/2018 | 10:22 PM
-    CompletionDate: 
-    HasDetails: 1
-    Details: player movement disabled while in dialoge?
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0, g: 0.092921734, b: 1, a: 1}
   - Title: Standardize combat menu / main menu
     CreationDate: 1/3/2019 | 10:23 PM
     CompletionDate: 
@@ -41,15 +32,6 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 1, g: 0, b: 0.91679955, a: 1}
-  - Title: 'BUG: active choice selection'
-    CreationDate: 1/20/2019 | 7:34 PM
-    CompletionDate: 
-    HasDetails: 1
-    Details: Index 0 being chosen on the second time dialogue is opened
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 1, g: 0, b: 0, a: 1}
   - Title: 'BUG: Scene does not reset'
     CreationDate: 1/24/2019 | 5:58 PM
     CompletionDate: 
@@ -258,6 +240,24 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.16343297, g: 0.031772893, b: 0.9622642, a: 1}
+  - Title: 'BUG: active choice selection'
+    CreationDate: 1/20/2019 | 7:34 PM
+    CompletionDate: 2/10/2019 | 4:48 PM
+    HasDetails: 1
+    Details: Index 0 being chosen on the second time dialogue is opened
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0, b: 0, a: 1}
+  - Title: Add ink integration
+    CreationDate: 12/30/2018 | 10:22 PM
+    CompletionDate: 2/10/2019 | 4:48 PM
+    HasDetails: 1
+    Details: player movement disabled while in dialoge?
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0, g: 0.092921734, b: 1, a: 1}
   DeferredTasks:
   - Title: world > combat > victory > world flow
     CreationDate: 12/17/2018 | 12:03 AM
