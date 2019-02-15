@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour {
 	//SINGLETON
 	public static DialogueManager active;
 
-    private void Awake() {
+  private void Awake() {
 		if( active != null){ GameObject.Destroy(this);}
 		else{active = this;}
 

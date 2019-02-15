@@ -7,21 +7,25 @@ using UnityEngine.UI;
 //TODO: make combat UI manager for combat scene
 public class UIManager : MonoBehaviour {
 
-	public Button _menuButton;
-	public Canvas _menuCanvas;
-	public Canvas _wmHud;
-	public bool _menuActive = false;
+	private bool menuOpen = false;
 
-
-	// Use this for initialization
-	void Start () {
-		_menuButton.onClick.AddListener(ToggleMenu);
-	}
-	void ToggleMenu(){
-		_menuActive = !_menuActive;
-		_menuCanvas.gameObject.SetActive(_menuActive);
-		_wmHud.gameObject.SetActive(_menuActive);
+	private void Start() {
+		InputManager.im.notifyMenuButtonObservers += MenuButtonEvent;
 	}
 
+	private void MenuButtonEvent(){
+		if(!menuOpen){ OpenMenu (); }
+		else         { CloseMenu(); }
+	}
+
+	private void OpenMenu(){
+		menuOpen = true;
+		Debug.Log("menu opened");
+	}
+
+	private void CloseMenu(){
+		menuOpen = false;
+		Debug.Log("menu closed");
+	}
 
 }

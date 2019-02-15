@@ -26,12 +26,17 @@ public class CombatManager : MonoBehaviour
 
     private Hero _hero;
 
+    public CombatMenu combatMenu;
+
+
     // Use this for initialization
     void Start()
     {
         _hero = Hero.active;
         defeatedEnemies = new List<Creature>();
         turnOrder = new List<GameObject>();
+
+        combatMenu = FindObjectOfType<CombatMenu>();
 
         
         SpawnEnemies();
@@ -86,6 +91,7 @@ public class CombatManager : MonoBehaviour
         StartCoroutine(PlayerWait());
     }
 
+    //TODO: clean this up into a proper player turn
     IEnumerator PlayerWait(){
         int countDown = 50;
         while(countDown < 0){
@@ -95,6 +101,8 @@ public class CombatManager : MonoBehaviour
 
         Debug.Log("Player turn!");
         playerTurn = true;
+
+        combatMenu.PlayerTurn();
     }
 
 

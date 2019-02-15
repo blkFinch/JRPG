@@ -7,6 +7,8 @@ public class CombatMenu : MonoBehaviour {
 
 	CombatManager cm;
 
+	private SelectOnInput soi;
+
 	public Button fleeButton;
 	public Button atkBtn;
 	// Use this for initialization
@@ -15,6 +17,12 @@ public class CombatMenu : MonoBehaviour {
 
 		fleeButton.onClick.AddListener(FleeCombat);
 		atkBtn.onClick.AddListener(Attack);
+	}
+
+	public void PlayerTurn(){
+		soi = GetComponent<SelectOnInput>();
+		Debug.Log("objects:" + soi + atkBtn);
+		soi.selectedObject = atkBtn.gameObject;
 	}
 
 	void FleeCombat(){

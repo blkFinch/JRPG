@@ -4,7 +4,7 @@
         Hello! this is initial text! Several choice should be expected!
         +   [Hey!] -> bored
         +   [option 2!] -> bored
-        *   [who are you?] -> get_quest
+        +   [who are you?] -> get_quest
     ->DONE
 
     = bored 
