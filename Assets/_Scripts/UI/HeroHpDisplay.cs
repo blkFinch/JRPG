@@ -12,12 +12,12 @@ public class HeroHpDisplay : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		text = GetComponent<Text>();
-		currentHp = Hero.active.data.CurrentHp.ToString();
-        totalHp = Hero.active.data.Hp.ToString();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		currentHp = Hero.active.data.CurrentHp.ToString();
+        totalHp = Hero.active.data.Hp.ToString();
 		
 		text.text = "HP: " + currentHp + " / " + totalHp;
 	}

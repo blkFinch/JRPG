@@ -13,6 +13,8 @@ public class CombatManager : MonoBehaviour
     public Canvas combatCanvas;
     public GameObject enemyBody;
     private EnemyBody activeEnemy; 
+    private EnemyBody target;
+    private int targetIndex;
 
 
     //UTILITY
@@ -21,6 +23,7 @@ public class CombatManager : MonoBehaviour
     public List<Creature> defeatedEnemies;
     private VictorySpoils spoils;
     private bool playerTurn;
+    private bool canAttack = false;
     private int turnIndex = 0;
 
 
@@ -37,7 +40,7 @@ public class CombatManager : MonoBehaviour
         turnOrder = new List<GameObject>();
 
         combatMenu = FindObjectOfType<CombatMenu>();
-
+        InputManager.im.notifyActionButtonObservers += PlayerAttack;
         
         SpawnEnemies();
         MainCombatLoop();
@@ -125,28 +128,55 @@ public class CombatManager : MonoBehaviour
         RotateOrder();
     }
 
-    //TODO: extract this method to a listener that takes a Creature target as argument
     public void PlayerAttack()
     {
-        if (playerTurn)
-        {
-            
-            EnemyBody target = turnOrder[0].GetComponent<EnemyBody>();
-
+        if (target && canAttack)
+        {          
+            canAttack = false;  
             int damage = CalculateDamage(_hero.data.Atk, target.def);
 
-            Debug.Log(
-                _hero.data.Name + "attacked " + target + " for " + damage
-                );
+            Debug.Log(_hero.data.Name + "attacked " + target + " for " + damage);
 
             target.TakeDamage(damage);
             Debug.Log("current hp" + target.currentHp);
-            playerTurn = false;
             
 
             RotateOrder();
             StartPlayerWait();
         }
+        
+    }
+
+
+    public void Target(int index){
+        targetIndex = index;
+        target = turnOrder[index].GetComponent<EnemyBody>();
+
+        ClearEnemyColor();
+        target.GetComponent<Image>().color = Color.blue;
+
+        StartCoroutine(PrepareAttack());
+
+    }
+
+    public void TargetLeft(){
+        if(targetIndex > 0){
+            targetIndex--;
+            Target(targetIndex);
+        }
+    }
+
+    public void TargetRight(){
+        if(targetIndex < turnOrder.Count){
+            targetIndex++;
+            Target(targetIndex);
+        }
+
+    }
+
+    IEnumerator PrepareAttack(){
+        yield return new WaitForSeconds(1); //prevents enemy from being attacked upon targeting
+        canAttack = true;
     }
 
     public int CalculateDamage(int atk, int def)
@@ -159,16 +189,22 @@ public class CombatManager : MonoBehaviour
     private void RotateOrder()
     {
         CheckForVictory();
-        
-        for(int f = 0; f < turnOrder.Count; f++){
-            turnOrder[f].GetComponent<Image>().color = Color.white;
-        }
+
+        ClearEnemyColor();
 
         var lastActive = turnOrder[0];
         turnOrder.Remove(lastActive);
         turnOrder.Add(lastActive);
-        
+
         MainCombatLoop();
+    }
+
+    private void ClearEnemyColor()
+    {
+        for (int f = 0; f < turnOrder.Count; f++)
+        {
+            turnOrder[f].GetComponent<Image>().color = Color.white;
+        }
     }
 
     private void CheckForVictory()

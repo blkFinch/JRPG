@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 
-public enum InputMode{DirectControl, DialogueSelect, MenuSelect} 
+public enum InputMode{DirectControl, DialogueSelect, MenuSelect, CombatTarget} 
 
 public class InputManager : MonoBehaviour {
 
@@ -43,6 +43,7 @@ public class InputManager : MonoBehaviour {
 	//Shortcuts for other Managers
 	GameManager gm;
 	DialogueManager dm;
+	CombatManager cm;
 
 	//Catches
 	private bool axisInUse = false; //so only one choice can be selected at a time
@@ -75,6 +76,7 @@ public class InputManager : MonoBehaviour {
 
 		if( inputMode == InputMode.DirectControl ){ ProcessMovement(); }
 		else if( inputMode == InputMode.DialogueSelect){ ProcessDialogueSelect(); }	
+		else if( inputMode == InputMode.CombatTarget){ ProcessCombatTarget(); }
 	}
 
 	//INPUT STATE MANAGEMENT
@@ -89,6 +91,11 @@ public class InputManager : MonoBehaviour {
 
 	public void InputModeMenu(){
 		inputMode = InputMode.MenuSelect;
+	}
+
+	public void InputModeTarget(){
+		cm = FindObjectOfType<CombatManager>();
+		inputMode = InputMode.CombatTarget;
 	}
 
 	void ProcessMovement(){
@@ -115,6 +122,28 @@ public class InputManager : MonoBehaviour {
 		}
 
 		if(_v == 0 ){
+			axisInUse = false;
+		}
+	}
+
+	void ProcessCombatTarget(){
+		if(_h == 1){
+			if(axisInUse == false){
+				axisInUse = true;
+				cm.TargetRight();
+			}	
+
+		}
+
+		if(_h == -1){
+			if(axisInUse == false){
+				axisInUse = true;
+				cm.TargetLeft();
+			}	
+
+		}
+
+		if(_h == 0 ){
 			axisInUse = false;
 		}
 	}

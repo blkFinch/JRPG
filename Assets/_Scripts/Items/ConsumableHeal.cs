@@ -9,9 +9,11 @@ public class ConsumableHeal : ConsumableAction {
 
 	[SerializeField]
 	int AmountToHeal;
+	
 	public override void OnConsume(){
 		Hero.active.data.CurrentHp += AmountToHeal;
 
-		Debug.Log(onUseString);
+		Debug.Log(onUseString + "healing: " + AmountToHeal);
+		Debug.Log(Hero.active.data.CurrentHp);
 	}
 }

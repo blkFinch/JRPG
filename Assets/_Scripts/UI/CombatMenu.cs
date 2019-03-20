@@ -11,6 +11,7 @@ public class CombatMenu : MonoBehaviour {
 
 	public Button fleeButton;
 	public Button atkBtn;
+	
 	// Use this for initialization
 	void Start () {
 		cm = FindObjectOfType<CombatManager>();
@@ -30,7 +31,10 @@ public class CombatMenu : MonoBehaviour {
 	}
 
 	void Attack(){
-		cm.PlayerAttack();
+		if(InputManager.im.inputMode != InputMode.CombatTarget){
+			InputManager.im.InputModeTarget();
+			cm.Target(0); //init target to 0
+		}
 	}
 	
 

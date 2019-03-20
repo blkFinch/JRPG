@@ -4,10 +4,13 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+UnityGenerated/
 
 # temp models
 Assets/TempModels
-
+Assets/Creatures_Pack.unity
+Assets/Creatures_Pack/*
+Assets/unity-chan!/
 # Visual Studio cache directory
 .vs/
 

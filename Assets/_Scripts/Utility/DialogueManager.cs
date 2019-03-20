@@ -183,20 +183,22 @@ public class DialogueManager : MonoBehaviour {
 
 	//Destroys TextBox and all associated choice boxes restting to default
 	public void DestroyTextBox(){
-		Destroy(activeTextBox.gameObject);
-		isDisplayingBox = false;
+		if(isDisplayingBox){
 
-		//destroys all choice buttons and removes them from list
-		if(activeChoiceButtons.Any()){
-			foreach(var button in activeChoiceButtons){
-				Destroy(button.gameObject);
+			Destroy(activeTextBox.gameObject);
+			isDisplayingBox = false;
+
+			//destroys all choice buttons and removes them from list
+			if(activeChoiceButtons.Any()){
+				foreach(var button in activeChoiceButtons){
+					Destroy(button.gameObject);
+				}
+
+				activeChoiceButtons.Clear();
+				activeChoices.Clear();
+				
 			}
-
-			activeChoiceButtons.Clear();
-			activeChoices.Clear();
-			
 		}
-
 	}
 
 	public void ExitDialogue(){

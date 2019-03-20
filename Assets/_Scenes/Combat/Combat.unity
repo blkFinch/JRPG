@@ -731,7 +731,7 @@ Prefab:
         type: 2}
       propertyPath: formation
       value: 
-      objectReference: {fileID: 11400000, guid: 973eb04592e6b364da65cfef0c1db47b,
+      objectReference: {fileID: 11400000, guid: 291578ba9f709c44c9ae33f9143fd8cb,
         type: 2}
     - target: {fileID: 114457891109628266, guid: dcc22dc3aaa6ad944bd10efc2de189b3,
         type: 2}

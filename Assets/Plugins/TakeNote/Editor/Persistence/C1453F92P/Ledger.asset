@@ -12,6 +12,25 @@ MonoBehaviour:
   m_Name: Ledger
   m_EditorClassIdentifier: 
   OutstandingTasks:
+  - Title: Convert BPM to Vector Speed
+    CreationDate: 3/17/2019 | 11:49 AM
+    CompletionDate: 
+    HasDetails: 1
+    Details: Find out how to normalize speed of objects with bpm so I can easily manipulate
+      the timing
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.30704877, g: 0.35486513, b: 0.9433962, a: 1}
+  - Title: extract menu navigation to InputManager
+    CreationDate: 2/22/2019 | 3:12 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.80137366, g: 0.8018868, b: 0.39716092, a: 1}
   - Title: Standardize combat menu / main menu
     CreationDate: 1/3/2019 | 10:23 PM
     CompletionDate: 
