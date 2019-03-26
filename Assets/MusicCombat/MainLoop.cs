@@ -2,49 +2,84 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainLoop : MonoBehaviour {
+public class MainLoop : MonoBehaviour
+{
 
-	public AudioClip clip;
-	public float clipLength;
+    public AudioClip clip;
+    public float clipLength;
 
-	public AudioSource slaveAudio;
+    //INFO FOR MAIN LOOP
+    public float bpm = 120f;
+    public float barTime;
+		float barsInClip;
 
-	//Ambivalent notice that loop has started for other clips to sync
-	public delegate void OnLoopStart();
-	public event OnLoopStart notifyLoopStartObservers;
+    //Player Audio Samples
+    public AudioSource slaveAudio;
 
-	private AudioSource source;
+    //Ambivalent notice that loop has started for other clips to sync
+    public delegate void OnLoopStart();
+    public event OnLoopStart notifyLoopStartObservers;
+		public delegate void OnLastBar();
+		public event OnLastBar notifyLastBarObservers;
 
-	// Use this for initialization
-	void Start () {
-		source = this.GetComponent<AudioSource>();
-	}
+    private AudioSource source;
 
-	public void StartLoop(){
-		source.clip = clip;
-		clipLength = clip.length;
-		source.loop = true;
-	
-		StartCoroutine(playAndClock());
-	}
+    // Use this for initialization
+    void Start()
+    {
+        source = this.GetComponent<AudioSource>();
 
-	public void StopLoop(){
-		source.loop = false;
-	}
+        //esitmate bar time based on provided bpm [assumes 4:4]
+        barTime = (60.0f / bpm) * 4.0f;
 
-	IEnumerator playAndClock(){
-		source.Play();
-		while(source.isPlaying){
-			Debug.Log("start loop");
-			
-			if(notifyLoopStartObservers != null){ notifyLoopStartObservers(); }
-			yield return new WaitForSeconds(clipLength);
+				LoadClip();
+    }
+
+		public void LoadClip(){
+				source.clip = clip;
+        clipLength = clip.length;
+				barsInClip = clipLength/barTime;
+        source.loop = true;
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		slaveAudio.timeSamples = source.timeSamples;
 
-	}
+	//Begins clip in a timed coroutine
+    public void StartLoop()
+    {
+
+        StartCoroutine(playAndClock());
+    }
+
+    public void StopLoop()
+    {
+        source.loop = false;
+    }
+
+	//TODO: send delegate out on last bar
+    IEnumerator playAndClock()
+    {
+        source.Play();
+        while (source.isPlaying)
+        {
+						//start of loop
+					int _bars = 0;
+          if (notifyLoopStartObservers != null) { notifyLoopStartObservers();}
+
+					while(_bars < barsInClip){
+						if( _bars == (barsInClip - 1)){ 
+							if(notifyLastBarObservers != null){notifyLastBarObservers();}
+						}
+						_bars++;
+						yield return new WaitForSeconds(barTime);
+					}
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (source.isPlaying)
+        {
+            slaveAudio.timeSamples = source.timeSamples;
+        }
+    }
 }

@@ -500,8 +500,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -208.4, y: 0}
-  m_SizeDelta: {x: -531.6, y: 0}
+  m_AnchoredPosition: {x: -252, y: 0}
+  m_SizeDelta: {x: -584.4, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114848581
 MonoBehaviour:
@@ -797,6 +797,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 0d0a566172e657d44a598eac4589fe0a, type: 3}
+  queuedToPlay: 0
+  master: {fileID: 0}
+  icon: {fileID: 1737467251779986, guid: 139894e640407214e893056598291c63, type: 2}
+  bpm: 120
+  barTime: 0
 --- !u!1 &1369754691
 GameObject:
   m_ObjectHideFlags: 0
