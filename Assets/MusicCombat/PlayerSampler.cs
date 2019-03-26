@@ -17,15 +17,15 @@ public class PlayerSampler : MonoBehaviour
     public string metadataPath = "/Assets/MusicCombat/bass_loop.sd";
     private List<string> loopData;
 
-    
-	//ICON SPEED = 1f
-	// speed = distance/time => bpm = distance / clipLength (s)
-	public GameObject icon;
-	float SPAWN_X_POS = 10;
-	float TARGET_X_POS = -6;
-	float iconSpeed;
 
-    
+    //ICON SPEED = 1f
+    // speed = distance/time => bpm = distance / clipLength (s)
+    public GameObject icon;
+    float SPAWN_X_POS = 10;
+    float TARGET_X_POS = -6;
+    float iconSpeed;
+
+
 
     // Use this for initialization
     void Start()
@@ -39,20 +39,36 @@ public class PlayerSampler : MonoBehaviour
     }
 
     //SPAWNS ICONS IN TIME WITH BEAT
-    // TODO: Time this to start one bar ahead of loop
+    // 
     IEnumerator spawnBarAndPlay()
     {
-        iconSpeed = (SPAWN_X_POS - TARGET_X_POS)/ master.bpm;
+
+        //Matches the speed of the icon to hit the mark  on time
+        //TODO: consider changing so this spawns the beat further away to keep same time...
+        iconSpeed = (SPAWN_X_POS - TARGET_X_POS) / master.bpm;
+
         bool loopStart = false;
-        while (source.isPlaying || !loopStart)
+
+        //meta data for loop
+        bool dataToRead = true;
+        int lines = loopData.Count;
+        int readLine = 0;
+
+        while (dataToRead)
         {
             int beats = 0;
             while (beats < 4)
             {
-                if(loopData[beats] == "1"){
+                if (loopData[readLine] == "1")
+                {
                     SpawnIcon();
                 }
+                readLine++;
+
                 beats++;
+
+                if (readLine >= lines) { dataToRead = false; }
+
                 yield return new WaitForSeconds(master.barTime / 4);
             }
             if (!loopStart)
@@ -83,6 +99,7 @@ public class PlayerSampler : MonoBehaviour
     {
         if (queuedToPlay)
         {
+            queuedToPlay = false;
             StartCoroutine(spawnBarAndPlay());
         }
     }
