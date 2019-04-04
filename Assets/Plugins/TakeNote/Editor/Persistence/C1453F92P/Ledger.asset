@@ -12,16 +12,35 @@ MonoBehaviour:
   m_Name: Ledger
   m_EditorClassIdentifier: 
   OutstandingTasks:
-  - Title: Convert BPM to Vector Speed
-    CreationDate: 3/17/2019 | 11:49 AM
+  - Title: Make Note Speed constant
+    CreationDate: 3/30/2019 | 10:36 AM
     CompletionDate: 
     HasDetails: 1
-    Details: Find out how to normalize speed of objects with bpm so I can easily manipulate
-      the timing
+    Details: "Notes should spawn at different distances rather than different speeds
+      \nOR\nNotes are static and bar moves"
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
-    DrawColor: {r: 0.30704877, g: 0.35486513, b: 0.9433962, a: 1}
+    DrawColor: {r: 0.8584906, g: 0.052643314, b: 0.052643314, a: 1}
+  - Title: Serializable Object for Player Loop
+    CreationDate: 3/26/2019 | 12:39 AM
+    CompletionDate: 
+    HasDetails: 1
+    Details: should contain the audio clip and a path to the song data
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.23686488, g: 1, b: 0.23137254, a: 1}
+  - Title: Secondary CoRoutine for finer note spawn detail
+    CreationDate: 3/26/2019 | 12:40 AM
+    CompletionDate: 
+    HasDetails: 1
+    Details: should break the beats into 4 "spawn points" to allow for finer detail
+      on the button presses
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.23686488, g: 1, b: 0.23137254, a: 1}
   - Title: extract menu navigation to InputManager
     CreationDate: 2/22/2019 | 3:12 PM
     CompletionDate: 
@@ -31,35 +50,6 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.80137366, g: 0.8018868, b: 0.39716092, a: 1}
-  - Title: Standardize combat menu / main menu
-    CreationDate: 1/3/2019 | 10:23 PM
-    CompletionDate: 
-    HasDetails: 0
-    Details: 
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.42770475, g: 0.22895159, b: 0.990566, a: 1}
-  - Title: Add visual elements to combat
-    CreationDate: 12/23/2018 | 6:04 PM
-    CompletionDate: 
-    HasDetails: 1
-    Details: '-spawn enemy(ies) on screen as text elements
-
-      -allow targeting for player attack'
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 1, g: 0, b: 0.91679955, a: 1}
-  - Title: 'BUG: Scene does not reset'
-    CreationDate: 1/24/2019 | 5:58 PM
-    CompletionDate: 
-    HasDetails: 1
-    Details: after choosing options to end dialogue tree, scene does not reset
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 1, g: 0, b: 0, a: 1}
   CompletedTasks:
   - Title: Clean up folder structure
     CreationDate: 12/16/2018 | 11:59 PM
@@ -277,6 +267,38 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0, g: 0.092921734, b: 1, a: 1}
+  - Title: Convert BPM to Vector Speed
+    CreationDate: 3/17/2019 | 11:49 AM
+    CompletionDate: 3/26/2019 | 12:35 AM
+    HasDetails: 1
+    Details: Find out how to normalize speed of objects with bpm so I can easily manipulate
+      the timing
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.30704877, g: 0.35486513, b: 0.9433962, a: 1}
+  - Title: 'BUG: Scene does not reset'
+    CreationDate: 1/24/2019 | 5:58 PM
+    CompletionDate: 3/26/2019 | 12:35 AM
+    HasDetails: 1
+    Details: after choosing options to end dialogue tree, scene does not reset
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0, b: 0, a: 1}
+  - Title: Write Loop Meta Data Parser
+    CreationDate: 3/26/2019 | 12:38 AM
+    CompletionDate: 3/30/2019 | 10:36 AM
+    HasDetails: 1
+    Details: 'Should take a path as an argument in its constructor and return a list
+      of stringa to then be used by the icon spawner
+
+
+      should strip commas or allow for some minor organization of the sd file tyoe'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.23686488, g: 1, b: 0.23137254, a: 1}
   DeferredTasks:
   - Title: world > combat > victory > world flow
     CreationDate: 12/17/2018 | 12:03 AM
@@ -368,3 +390,24 @@ MonoBehaviour:
     IsDeferred: 1
     IsColored: 1
     DrawColor: {r: 0, g: 1, b: 0.49818873, a: 1}
+  - Title: Add visual elements to combat
+    CreationDate: 12/23/2018 | 6:04 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: '-spawn enemy(ies) on screen as text elements
+
+      -allow targeting for player attack'
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 1, g: 0, b: 0.91679955, a: 1}
+  - Title: Standardize combat menu / main menu
+    CreationDate: 1/3/2019 | 10:23 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: 'DEFERRED: this will change when I figure out what the combat will actually
+      be like'
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.42770475, g: 0.22895159, b: 0.990566, a: 1}

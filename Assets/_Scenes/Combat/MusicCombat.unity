@@ -141,8 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5b120eb692b2644a0fe0fd05a3ff5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 921a1045310bd6d4b8b4021dfc86dfa4, type: 3}
+  clip: {fileID: 8300000, guid: e401c50fe549d4b4f8e64e68c4228d19, type: 3}
   clipLength: 0
+  bpm: 120
+  barTime: 0
   slaveAudio: {fileID: 1285142167}
 --- !u!82 &323207518
 AudioSource:
@@ -594,7 +596,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.47730583, g: 0.9433962, b: 0.28034887, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -796,12 +798,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3622716dbbd121347b069cb38f331992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 0d0a566172e657d44a598eac4589fe0a, type: 3}
+  activeLoop: {fileID: 11400000, guid: 2db56bfc53001fe4594e3591a29f67ee, type: 2}
   queuedToPlay: 0
   master: {fileID: 0}
-  icon: {fileID: 1737467251779986, guid: 139894e640407214e893056598291c63, type: 2}
-  bpm: 120
-  barTime: 0
+  greenIcon: {fileID: 1737467251779986, guid: 139894e640407214e893056598291c63, type: 2}
+  blueIcon: {fileID: 1737467251779986, guid: eb4996fc3207059468f8266f1f80a7a0, type: 2}
+  yellowIcon: {fileID: 1737467251779986, guid: a154783006144d54ca150ffc272d923c, type: 2}
+  redIcon: {fileID: 1737467251779986, guid: 8dc1acd269829cb43adc4d2f3a95d4f9, type: 2}
 --- !u!1 &1369754691
 GameObject:
   m_ObjectHideFlags: 0
