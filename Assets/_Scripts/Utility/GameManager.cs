@@ -58,6 +58,15 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadAsyncScene(sceneName, deserialize));
     }
 
+    public void LoadSavedScene(){
+        //Gets the saved scene from the hero's save data
+        string name = Hero.active.data.SavedSceneName;
+        LoadScene(name);
+    }
+    
+    public void SaveCurrentScene(){
+        Hero.active.data.SavedSceneName = activeSceneName;
+    }
     IEnumerator LoadAsyncScene(string sceneName, bool deserialize) {
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
@@ -75,6 +84,7 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoadEvent(Scene scene, LoadSceneMode mode) {
         this.activeSceneName = scene.name;
+    
     }
 
     //DEBUGGING TODO: Remove later

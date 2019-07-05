@@ -39,7 +39,6 @@ public class TitleMenu : MonoBehaviour {
 
 	void LoadGame(){
 		SaveLoad.LoadHero();
-		StartGame();
 	}
 
 	void SaveNewGame(){

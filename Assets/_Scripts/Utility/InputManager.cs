@@ -52,7 +52,6 @@ public class InputManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gm = GameManager.gm;
-		dm = DialogueManager.active;
 		canWalk = true; //can walk by default
 
 	}
@@ -119,7 +118,7 @@ public class InputManager : MonoBehaviour {
 		if(_v == 1){
 			if(axisInUse == false){
 				axisInUse = true;
-				dm.NavigateUp();
+				DialogueManager.active.NavigateUp();
 			}	
 				
 		}
@@ -127,7 +126,7 @@ public class InputManager : MonoBehaviour {
 		if(_v == -1){
 			if(axisInUse == false){
 				axisInUse = true;
-				dm.NavigateDown();
+				DialogueManager.active.NavigateDown();
 			}	
 		}
 

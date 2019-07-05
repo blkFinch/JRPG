@@ -13,6 +13,9 @@ public static class SaveLoad
         //saves current inventory to HeroData as List<int> of item_ids
         Hero.active.inventory.SerializeInventory();
 
+        //save current scene
+       GameManager.gm.SaveCurrentScene();
+
         //serializes HeroData to local hard disk
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/heroData.gd");
@@ -21,6 +24,7 @@ public static class SaveLoad
         Debug.Log("hero saved!");
     }
 
+    //Here is all initializing functions to be performed after a load
     public static void LoadHero()
     {
         if (File.Exists(Application.persistentDataPath + "/heroData.gd"))
@@ -34,6 +38,8 @@ public static class SaveLoad
 
             //Loads active inventory from HeroData
             Hero.active.inventory.DeserializeInventory();
+
+            GameManager.gm.LoadSavedScene();
 
         }
 

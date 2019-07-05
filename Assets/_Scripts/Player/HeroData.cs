@@ -27,6 +27,8 @@ public class HeroData
         }
     }
 
+    private string savedSceneName;
+
     public string Name {
         get { return _name; }
         set { _name = value; }
@@ -140,6 +142,16 @@ public class HeroData
 
         set {
             gold = value;
+        }
+    }
+
+    public string SavedSceneName {
+        get {
+            return savedSceneName;
+        }
+
+        set {
+            savedSceneName = value;
         }
     }
 }

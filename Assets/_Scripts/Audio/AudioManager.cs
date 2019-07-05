@@ -40,6 +40,19 @@ public class AudioManager : MonoBehaviour
        activeSlaves.Add(_slave);
     }
 
+    public void DestroySalveAudio(Sample sample){
+        GameObject _sToDestroy = null;
+        foreach(var _s in activeSlaves){
+            if(sample.clip == _s.GetComponent<SlaveAudio>().clipToPlay){
+                _sToDestroy = _s;
+            }
+        }
+        if(_sToDestroy != null){
+            activeSlaves.Remove(_sToDestroy);
+            Destroy(_sToDestroy);
+        }
+    }
+
     public void toggleFilter() {
         Debug.Log("toggle filter = " + _filtered);
         if (_filtered)

@@ -53,5 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuPrefab: {fileID: 114553649341080886, guid: 72272ae277212cc4999be4b23dfe9a99,
     type: 2}
-  ItemMenuPrefab: {fileID: 0}
-  SamplerMenuPrefab: {fileID: 0}
+  ItemMenuPrefab: {fileID: 114346271195302646, guid: 377821117eb4958418caa2e230432e37,
+    type: 2}
+  SamplerMenuPrefab: {fileID: 114694844969715644, guid: 1487488f04f4d884e9ca8090831a8d38,
+    type: 2}

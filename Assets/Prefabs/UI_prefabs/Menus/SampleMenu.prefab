@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 224058922716447628}
   - component: {fileID: 222137336155582602}
   - component: {fileID: 114903601313180266}
+  - component: {fileID: 114025444283012056}
   m_Layer: 5
   m_Name: Filter
   m_TagString: Untagged
@@ -194,6 +195,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sample: {fileID: 11400000, guid: 60d695df918f9124ca92852f84608c1b, type: 2}
+--- !u!114 &114025444283012056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1701473714364804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a188cb8ff01c78e499737cc883730ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114090085153577312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -559,7 +571,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: filterMaster
+        m_MethodName: toggleFilter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

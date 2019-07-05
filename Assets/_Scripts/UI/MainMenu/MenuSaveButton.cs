@@ -8,14 +8,12 @@ public class MenuSaveButton : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
 
     public Text display;
-
-	public delegate void MenuSaveSelected();
-	public event MenuSaveSelected notifyMenuTabObservers;
+      private void Awake() {
+		Button _sBtn = this.GetComponent<Button>();
+		_sBtn.onClick.AddListener(OnClick);
+	}
     public void OnSelect(BaseEventData eventData)
     {
-
-		notifyMenuTabObservers();
-
         display.text = "Save Game? This will overwrite previous save...";
     }
 
