@@ -6,6 +6,8 @@ TagManager:
   tags:
   - RemoveLater
   - Shredder
+  - NoPass
+  - Talking
   layers:
   - Default
   - TransparentFX

@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Name: Ledger
   m_EditorClassIdentifier: 
   OutstandingTasks:
-  - Title: Make Note Speed constant
-    CreationDate: 3/30/2019 | 10:36 AM
+  - Title: MENU
+    CreationDate: 6/22/2019 | 11:24 PM
     CompletionDate: 
     HasDetails: 1
-    Details: "Notes should spawn at different distances rather than different speeds
-      \nOR\nNotes are static and bar moves"
+    Details: DESIGN WORKING MENU SYSTEM
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
-    DrawColor: {r: 0.8584906, g: 0.052643314, b: 0.052643314, a: 1}
+    DrawColor: {r: 0.18943575, g: 0.9339623, b: 0.23624948, a: 1}
   - Title: Serializable Object for Player Loop
     CreationDate: 3/26/2019 | 12:39 AM
     CompletionDate: 
@@ -31,25 +30,15 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.23686488, g: 1, b: 0.23137254, a: 1}
-  - Title: Secondary CoRoutine for finer note spawn detail
-    CreationDate: 3/26/2019 | 12:40 AM
+  - Title: 'TODO: dialogue close on action button if no choice'
+    CreationDate: 5/16/2019 | 10:37 PM
     CompletionDate: 
     HasDetails: 1
-    Details: should break the beats into 4 "spawn points" to allow for finer detail
-      on the button presses
+    Details: Also action button shoud instantiate choices if they exist
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
-    DrawColor: {r: 0.23686488, g: 1, b: 0.23137254, a: 1}
-  - Title: extract menu navigation to InputManager
-    CreationDate: 2/22/2019 | 3:12 PM
-    CompletionDate: 
-    HasDetails: 0
-    Details: 
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.80137366, g: 0.8018868, b: 0.39716092, a: 1}
+    DrawColor: {r: 1, g: 0.93879336, b: 0.2980392, a: 1}
   CompletedTasks:
   - Title: Clean up folder structure
     CreationDate: 12/16/2018 | 11:59 PM
@@ -299,6 +288,50 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.23686488, g: 1, b: 0.23137254, a: 1}
+  - Title: Move Bang to Player head isntead of TalkingObjkect
+    CreationDate: 4/10/2019 | 12:18 AM
+    CompletionDate: 4/14/2019 | 10:40 AM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 0
+    DrawColor: {r: 1, g: 1, b: 1, a: 1}
+  - Title: Write InkManager
+    CreationDate: 5/16/2019 | 5:43 PM
+    CompletionDate: 5/16/2019 | 10:36 PM
+    HasDetails: 1
+    Details: 'Ink Manager
+
+      -should bind external functions
+
+      -hold Main.ink
+
+      -parse ink and tags...'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.29882136, g: 0.2971698, b: 1, a: 1}
+  - Title: 'BUG: After scene change DialogueManager is no longer ExitingDialogue'
+    CreationDate: 5/20/2019 | 5:40 PM
+    CompletionDate: 5/21/2019 | 8:37 PM
+    HasDetails: 1
+    Details: Try changing the InkManager from static to a single instance per scene
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.8679245, g: 0.08597365, b: 0.08597365, a: 1}
+  - Title: 'BUG: ink choices fail after scene load'
+    CreationDate: 5/21/2019 | 11:59 PM
+    CompletionDate: 5/22/2019 | 12:08 AM
+    HasDetails: 1
+    Details: '-- INK RECEIVING DATA is called after player chooses a d.option
+
+      this is not right - it should only be called after the story is parsed'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.9339623, g: 0.16300285, b: 0.16300285, a: 1}
   DeferredTasks:
   - Title: world > combat > victory > world flow
     CreationDate: 12/17/2018 | 12:03 AM
@@ -411,3 +444,52 @@ MonoBehaviour:
     IsDeferred: 1
     IsColored: 1
     DrawColor: {r: 0.42770475, g: 0.22895159, b: 0.990566, a: 1}
+  - Title: extract menu navigation to InputManager
+    CreationDate: 2/22/2019 | 3:12 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.80137366, g: 0.8018868, b: 0.39716092, a: 1}
+  - Title: Make Note Speed constant
+    CreationDate: 3/30/2019 | 10:36 AM
+    CompletionDate: 
+    HasDetails: 1
+    Details: "Notes should spawn at different distances rather than different speeds
+      \nOR\nNotes are static and bar moves"
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.8584906, g: 0.052643314, b: 0.052643314, a: 1}
+  - Title: Secondary CoRoutine for finer note spawn detail
+    CreationDate: 3/26/2019 | 12:40 AM
+    CompletionDate: 
+    HasDetails: 1
+    Details: should break the beats into 4 "spawn points" to allow for finer detail
+      on the button presses
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.23686488, g: 1, b: 0.23137254, a: 1}
+  - Title: BUG- Ink destroys text box before making choice
+    CreationDate: 5/21/2019 | 8:38 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: It appears the stext box is destroyed after making a choice but before
+      the choice is processed
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.9528302, g: 0.05842829, b: 0.05842829, a: 1}
+  - Title: Scriptable Ink Object
+    CreationDate: 5/16/2019 | 10:43 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: Make a SO that has a method that can be called from Ink Manager and tagged
+      in ink scene
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.29882136, g: 0.2971698, b: 1, a: 1}

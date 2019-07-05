@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour {
 	//Accessors for inputs
 	public InputMode inputMode = InputMode.DirectControl;
 	public bool isWalking;
+	public bool canWalk { get; private set; }
 	float _v; //vertical axis
 	float _h; //horizontal axis
 
@@ -52,6 +53,7 @@ public class InputManager : MonoBehaviour {
 	void Start () {
 		gm = GameManager.gm;
 		dm = DialogueManager.active;
+		canWalk = true; //can walk by default
 
 	}
 	
@@ -65,7 +67,7 @@ public class InputManager : MonoBehaviour {
 			if(notifyActionButtonObservers != null ){ notifyActionButtonObservers(); }
 		}
 
-		if(CrossPlatformInputManager.GetButtonDown("Fire3")){
+		if(CrossPlatformInputManager.GetButtonDown("Menu")){
 			if(notifyMenuButtonObservers != null ){ notifyMenuButtonObservers(); }
 		}
 
@@ -96,6 +98,14 @@ public class InputManager : MonoBehaviour {
 	public void InputModeTarget(){
 		cm = FindObjectOfType<CombatManager>();
 		inputMode = InputMode.CombatTarget;
+	}
+
+	public void EnableMovement(){
+		canWalk = true;
+	}
+
+	public void DisableMovement(){
+		canWalk = false;
 	}
 
 	void ProcessMovement(){
@@ -132,7 +142,6 @@ public class InputManager : MonoBehaviour {
 				axisInUse = true;
 				cm.TargetRight();
 			}	
-
 		}
 
 		if(_h == -1){
@@ -140,7 +149,6 @@ public class InputManager : MonoBehaviour {
 				axisInUse = true;
 				cm.TargetLeft();
 			}	
-
 		}
 
 		if(_h == 0 ){

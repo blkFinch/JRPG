@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-public static class SaveLoad{
+public static class SaveLoad
+{
 
-    public static void SaveHero(){
+    public static void SaveHero()
+    {
 
         //saves current inventory to HeroData as List<int> of item_ids
         Hero.active.inventory.SerializeInventory();
@@ -19,18 +21,21 @@ public static class SaveLoad{
         Debug.Log("hero saved!");
     }
 
-    public static void LoadHero() {
-    if(File.Exists(Application.persistentDataPath + "/heroData.gd")) {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/heroData.gd", FileMode.Open);
-        HeroData loadedHero = (HeroData)bf.Deserialize(file);
-        file.Close();
+    public static void LoadHero()
+    {
+        if (File.Exists(Application.persistentDataPath + "/heroData.gd"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/heroData.gd", FileMode.Open);
+            HeroData loadedHero = (HeroData)bf.Deserialize(file);
+            file.Close();
 
-        Hero.active.data = loadedHero;
+            Hero.active.data = loadedHero;
 
-        //Loads active inventory from HeroData
-        Hero.active.inventory.DeserializeInventory();
+            //Loads active inventory from HeroData
+            Hero.active.inventory.DeserializeInventory();
+
+        }
+
     }
-
-}
 }

@@ -10,21 +10,40 @@ public abstract class Menu<T> : Menu where T : Menu<T>
     //Menu will be inheritable and overwritable so it must use protected virtual methods
     protected virtual void Awake()
     {
-        Instance = this;
+        Instance = (T)this;
     }
 
-    protected virtual void Start()
-    {
-        InputManager.im.notifyCancelButtonObservers += OnBackPressed;
-    }
+    protected static void Open()
+	{
+		if (Instance == null)
+			MenuManager.Instance.CreateInstance<T>();
+		else
+			Instance.gameObject.SetActive(true);
+		
+		MenuManager.Instance.OpenMenu(Instance);
+	}
 
     protected virtual void OnDestroy()
     {
         Instance = null;
     }
+
+    public static void Show()
+	{
+		Open();
+	}
 }
 
 public abstract class Menu : MonoBehaviour
 {
-    public abstract void OnBackPressed();
+	[Tooltip("Destroy the Game Object when menu is closed (reduces memory usage)")]
+	public bool DestroyWhenClosed = true;
+
+	[Tooltip("Disable menus that are under this one in the stack")]
+	public bool DisableMenusUnderneath = true;
+	
+
 }
+
+
+

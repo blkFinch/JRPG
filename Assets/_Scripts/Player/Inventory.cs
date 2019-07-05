@@ -15,6 +15,15 @@ public class Inventory{
 		items.Remove(item);
 	}
 
+	public bool HasItem(int id){
+		bool _hasItem = false;
+		foreach(Item item in items){
+			if(item.ID == id){ _hasItem = true;}
+		}
+
+		return _hasItem;
+	}
+
 	//SERIALIZATION 
 	//TODO: catch null reference exceptions during serial/deserial
 	public void SerializeInventory(){
@@ -33,14 +42,15 @@ public class Inventory{
 		// TODO: look at this later
 		if(inventoryData.s_items == null){ inventoryData.s_items = new List<int>(); } 
 
-		Item itemToAdd;
-
 		foreach (var id in inventoryData.s_items)
-		{
-			itemToAdd = GameManager.gm.itemDatabase.GetItem(id);
-			this.AddItem(itemToAdd);
-		}
-	}
+        {
+            AddItemFromID(id);
+        }
+    }
 
-
+    public void AddItemFromID(int id)
+    {
+        Item itemToAdd = GameManager.gm.itemDatabase.GetItem(id);
+        this.AddItem(itemToAdd);
+    }
 }

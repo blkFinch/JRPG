@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventoryButton : MonoBehaviour, ISelectHandler {
+public class InventoryButton : MenuButton<InventoryButton>, ISelectHandler {
 
   //TODO: better system for setting location to insantiate buttons
 	public GameObject initSlot;
 	public GameObject btnHolder;
 	public Button itemButton;
+
+ 
 	public void OnSelect(BaseEventData eventData){
         Debug.Log("inventory selected");
 		Debug.Log(Hero.active.inventory.items);

@@ -20,161 +20,125 @@ public class HeroData
     float loc_X, loc_Y, loc_Z;
 
     //properties
-    public int Level
-    {
+    public int Level {
         get { return _level; }
-        set
-        {
-             _level = value; 
+        set {
+            _level = value;
         }
     }
 
-    public string Name
-    {
+    public string Name {
         get { return _name; }
         set { _name = value; }
     }
 
-    public int Atk
-    {
-        get
-        {
+    public int Atk {
+        get {
             return atk;
         }
 
-        set
-        {
+        set {
             atk = value;
         }
     }
 
-    public int Def
-    {
-        get
-        {
+    public int Def {
+        get {
             return def;
         }
 
-        set
-        {
+        set {
             def = value;
         }
     }
 
-    public int Agi
-    {
-        get
-        {
+    public int Agi {
+        get {
             return agi;
         }
 
-        set
-        {
+        set {
             agi = value;
         }
     }
 
-    public int Mag
-    {
-        get
-        {
+    public int Mag {
+        get {
             return mag;
         }
 
-        set
-        {
+        set {
             mag = value;
         }
     }
 
-    public int Hp
-    {
-        get
-        {
+    public int Hp {
+        get {
             return hp;
         }
 
-        set
-        {
+        set {
             hp = value;
         }
     }
 
-    public int Xp
-    {
-        get
-        {
+    public int Xp {
+        get {
             return xp;
         }
 
-        set
-        {
+        set {
             xp = value;
         }
     }
 
-    public float Loc_X
-    {
-        get
-        {
+    public float Loc_X {
+        get {
             return loc_X;
         }
 
-        set
-        {
+        set {
             loc_X = value;
         }
     }
 
-    public float Loc_Y
-    {
-        get
-        {
+    public float Loc_Y {
+        get {
             return loc_Y;
         }
 
-        set
-        {
+        set {
             loc_Y = value;
         }
     }
 
-    public float Loc_Z
-    {
-        get
-        {
+    public float Loc_Z {
+        get {
             return loc_Z;
         }
 
-        set
-        {
+        set {
             loc_Z = value;
         }
     }
 
-    public int CurrentHp
-    {
-        get
-        {
+    public int CurrentHp {
+        get {
             return currentHp;
         }
 
-        set
-        {
+        set {
             currentHp = value;
-            if (currentHp > hp){currentHp = hp;}
+            if (currentHp > hp) { currentHp = hp; }
         }
     }
 
-    public int Gold
-    {
-        get
-        {
+    public int Gold {
+        get {
             return gold;
         }
 
-        set
-        {
+        set {
             gold = value;
         }
     }

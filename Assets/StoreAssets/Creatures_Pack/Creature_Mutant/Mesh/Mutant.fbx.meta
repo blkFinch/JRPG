@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 09abff63729f98845adc3bc82f8c6b75
+timeCreated: 1516178595
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Bind_Head
+    100002: Bind_HeadTop_End
+    100004: Bind_Hips
+    100006: Bind_Joint_GRP
+    100008: Bind_LeftArm
+    100010: Bind_LeftFoot
+    100012: Bind_LeftForeArm
+    100014: Bind_LeftHand
+    100016: Bind_LeftHandBigIndex1
+    100018: Bind_LeftHandBigIndex2
+    100020: Bind_LeftHandBigIndex3
+    100022: Bind_LeftHandBigIndex4
+    100024: Bind_LeftHandFin1Index1
+    100026: Bind_LeftHandFin1Index2
+    100028: Bind_LeftHandFin1Index3
+    100030: Bind_LeftHandFin1Index4
+    100032: Bind_LeftHandFin2Index1
+    100034: Bind_LeftHandFin2Index2
+    100036: Bind_LeftHandFin2Index3
+    100038: Bind_LeftHandFin2Index4
+    100040: Bind_LeftHandIndex1
+    100042: Bind_LeftHandIndex2
+    100044: Bind_LeftHandIndex3
+    100046: Bind_LeftHandIndex4
+    100048: Bind_LeftLeg
+    100050: Bind_LeftShoulder
+    100052: Bind_LeftToe_End
+    100054: Bind_LeftToeBase
+    100056: Bind_LeftUpLeg
+    100058: Bind_Neck
+    100060: Bind_RightArm
+    100062: Bind_RightFoot
+    100064: Bind_RightForeArm
+    100066: Bind_RightHand
+    100068: Bind_RightHandIndex1
+    100070: Bind_RightHandIndex2
+    100072: Bind_RightHandIndex3
+    100074: Bind_RightHandIndex4
+    100076: Bind_RightHandIndex5
+    100078: Bind_RightLeg
+    100080: Bind_RightShoulder
+    100082: Bind_RightToe_End
+    100084: Bind_RightToeBase
+    100086: Bind_RightUpLeg
+    100088: Bind_Spine
+    100090: Bind_Spine1
+    100092: Bind_Spine2
+    100094: Mesh_Body
+    100096: Mesh_GRP
+    100098: //RootNode
+    400000: Bind_Head
+    400002: Bind_HeadTop_End
+    400004: Bind_Hips
+    400006: Bind_Joint_GRP
+    400008: Bind_LeftArm
+    400010: Bind_LeftFoot
+    400012: Bind_LeftForeArm
+    400014: Bind_LeftHand
+    400016: Bind_LeftHandBigIndex1
+    400018: Bind_LeftHandBigIndex2
+    400020: Bind_LeftHandBigIndex3
+    400022: Bind_LeftHandBigIndex4
+    400024: Bind_LeftHandFin1Index1
+    400026: Bind_LeftHandFin1Index2
+    400028: Bind_LeftHandFin1Index3
+    400030: Bind_LeftHandFin1Index4
+    400032: Bind_LeftHandFin2Index1
+    400034: Bind_LeftHandFin2Index2
+    400036: Bind_LeftHandFin2Index3
+    400038: Bind_LeftHandFin2Index4
+    400040: Bind_LeftHandIndex1
+    400042: Bind_LeftHandIndex2
+    400044: Bind_LeftHandIndex3
+    400046: Bind_LeftHandIndex4
+    400048: Bind_LeftLeg
+    400050: Bind_LeftShoulder
+    400052: Bind_LeftToe_End
+    400054: Bind_LeftToeBase
+    400056: Bind_LeftUpLeg
+    400058: Bind_Neck
+    400060: Bind_RightArm
+    400062: Bind_RightFoot
+    400064: Bind_RightForeArm
+    400066: Bind_RightHand
+    400068: Bind_RightHandIndex1
+    400070: Bind_RightHandIndex2
+    400072: Bind_RightHandIndex3
+    400074: Bind_RightHandIndex4
+    400076: Bind_RightHandIndex5
+    400078: Bind_RightLeg
+    400080: Bind_RightShoulder
+    400082: Bind_RightToe_End
+    400084: Bind_RightToeBase
+    400086: Bind_RightUpLeg
+    400088: Bind_Spine
+    400090: Bind_Spine1
+    400092: Bind_Spine2
+    400094: Mesh_Body
+    400096: Mesh_GRP
+    400098: //RootNode
+    4300000: Mesh_Body
+    9500000: //RootNode
+    13700000: Mesh_Body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
