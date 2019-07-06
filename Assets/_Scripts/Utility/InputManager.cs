@@ -50,7 +50,6 @@ public class InputManager : MonoBehaviour
     // Use this for initialization
     void Start() {
         canWalk = true; //can walk by default
-
     }
 
     // Update is called once per frame

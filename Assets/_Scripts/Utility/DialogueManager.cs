@@ -7,6 +7,7 @@ using System.Linq; //for list handling
 
 public class DialogueManager : MonoBehaviour
 {
+    public float choiceDelay = 0.3f;
 
     public GameObject textBox;
     public Button choiceButtonPrefab;
@@ -45,15 +46,11 @@ public class DialogueManager : MonoBehaviour
     void Start() {
         isDisplayingBox = false;
         activeChoiceButtons = new List<Button>();
-
-        InputManager.im.notifyActionButtonObservers += SelectActiveChoice;
-        
     }
 
     //Good habit to unregister delgates
     private void OnDisable() {
-        InputManager.im.notifyActionButtonObservers -= SelectActiveChoice;
-        InputManager.im.notifyCancelButtonObservers -= ExitDialogue;
+       DeregisterListeners();
     }
 
     //RECIEVE AND RENDER 
@@ -107,7 +104,7 @@ public class DialogueManager : MonoBehaviour
 
     //TODO: Instead of waiting for a second - lets make that action button event call the choices
     private IEnumerator waitToDisplayChoices() {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(choiceDelay);
         for (int i = 0; i < activeChoices.Count; i++)
         {
             Button button = Instantiate(choiceButtonPrefab);
@@ -129,7 +126,7 @@ public class DialogueManager : MonoBehaviour
 
     void DisplayText() {
         InputManager.im.InputModeDialogue();
-        InputManager.im.notifyCancelButtonObservers += ExitDialogue;
+        RegisterListeners();
 
         if (!isDisplayingBox)
         {
@@ -176,10 +173,15 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void SelectActiveChoice() {
-        if (InputManager.im.inputMode == InputMode.DialogueSelect && activeChoices != null)
-        {
-            if (canChoose) { PlayerDialogueChoice(activeChoiceIndex); }
+    public void ActionButtonEvent() {
+        if(canChoose){  SelectActiveChoice(); }
+        else{ ExitDialogue(); }
+    }
+
+    //Should either pick selectec choice or exit dialogue if no choices available
+    private void SelectActiveChoice(){
+        if(activeChoices.Count > 0){
+            PlayerDialogueChoice(activeChoiceIndex);
         }
     }
 
@@ -209,7 +211,7 @@ public class DialogueManager : MonoBehaviour
 
     //CLEANS UP --  SAFE TO CALL
     public void ExitDialogue() {
-        InputManager.im.notifyCancelButtonObservers -= ExitDialogue;
+        DeregisterListeners();
 
         ClearDialogueCanvas();
         canChoose = false;
@@ -221,4 +223,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void RegisterListeners(){
+        InputManager.im.notifyActionButtonObservers += ActionButtonEvent;
+        InputManager.im.notifyCancelButtonObservers += ExitDialogue;
+    }
+
+    private void DeregisterListeners() {
+        InputManager.im.notifyCancelButtonObservers -= ExitDialogue;
+        InputManager.im.notifyActionButtonObservers -= ActionButtonEvent;
+    }
 }
