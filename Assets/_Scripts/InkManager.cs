@@ -62,7 +62,6 @@ public class InkManager : MonoBehaviour
     // READ / PROCESS INK
     //
     public void ReadScene(string scene) {
-        Debug.Log("reading scene");
 
         story.ChoosePathString(scene);
         ReadInk(); //loads ink story while it can continue
@@ -97,7 +96,6 @@ public class InkManager : MonoBehaviour
 
     private IEnumerator LateChoice(int index){
         yield return new WaitForEndOfFrame();
-        Debug.Log("LATE choosing index: " + index);
         story.ChooseChoiceIndex(index);
         ReadInk();
         SendTextToDialogueManager();
@@ -108,7 +106,6 @@ public class InkManager : MonoBehaviour
       to the Dialogue Manager to be displayed
    */
     void SendTextToDialogueManager() {
-        Debug.Log("sending text to DM");
         List<string> packagedChoices = new List<string>();
         foreach (var choice in activeChoiceList)
         {

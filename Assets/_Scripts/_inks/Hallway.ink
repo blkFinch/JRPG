@@ -10,3 +10,6 @@ INCLUDE Main.ink
     + [Not Yet...] ->END
 ->END
 
+=== strange_man
+    Hey bud, can you play me a sick bassline with that thing??
+->END

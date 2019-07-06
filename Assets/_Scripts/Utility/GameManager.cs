@@ -80,10 +80,13 @@ public class GameManager : MonoBehaviour
         }
 
         if (deserialize) { Hero.active.DeserializeLocation(); }
+
     }
 
     void OnSceneLoadEvent(Scene scene, LoadSceneMode mode) {
         this.activeSceneName = scene.name;
+        //TODO: clear all open menus in case
+        InputManager.im.InputModeDirect();
     
     }
 

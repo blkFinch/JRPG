@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("menu manager awake");
         Instance = this;
     }
 
@@ -30,14 +31,10 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         InputManager.im.notifyMenuButtonObservers += OpenMainMenu;
-        InputManager.im.notifyCancelButtonObservers += CloseMenu;
     }
 
     public void OpenMenu(Menu instance)
     {
-        if(menuStack.Count <= 0){
-            InputManager.im.DisableMovement();
-        }
         // De-activate top menu
         if (menuStack.Count > 0)
         {
@@ -87,8 +84,11 @@ public class MenuManager : MonoBehaviour
 
     public void OpenMainMenu()
     {
-        if (menuStack.Count <= 0)
+        if (menuStack.Count <= 0){
             MainMenu.Show();
+            InputManager.im.InputModeMenu();
+            InputManager.im.notifyCancelButtonObservers += CloseMenu;
+        }
     }
 
     public void OpenItemMenu(){
@@ -109,7 +109,9 @@ public class MenuManager : MonoBehaviour
             //Reactivate Topmenu
             if (menuStack.Count > 0) { menuStack.Peek().gameObject.SetActive(true); }
             else{
-                InputManager.im.EnableMovement();
+                //Switches to direct controll if all menus are closed
+                InputManager.im.notifyCancelButtonObservers -= CloseMenu; //unregister uneeded cancel
+                InputManager.im.InputModeDirect();
             }
         }
 

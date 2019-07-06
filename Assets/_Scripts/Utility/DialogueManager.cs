@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
 		 we'll see... -finch
 	 */
     public delegate void OnDialogueChoice(int index);
-    public event OnDialogueChoice NotifyDialogueChoiceListeners;
+    public event OnDialogueChoice NotifyDialogueChoiceListeners; //TODO: remove this???
 
     //SINGLETON
     public static DialogueManager active;
@@ -47,6 +47,13 @@ public class DialogueManager : MonoBehaviour
         activeChoiceButtons = new List<Button>();
 
         InputManager.im.notifyActionButtonObservers += SelectActiveChoice;
+        
+    }
+
+    //Good habit to unregister delgates
+    private void OnDisable() {
+        InputManager.im.notifyActionButtonObservers -= SelectActiveChoice;
+        InputManager.im.notifyCancelButtonObservers -= ExitDialogue;
     }
 
     //RECIEVE AND RENDER 
@@ -121,7 +128,8 @@ public class DialogueManager : MonoBehaviour
     //DISPLAY TEXT TO SCREEN
 
     void DisplayText() {
-        InputManager.im.InputModeDialogue(); //TODO: consider removing and replace with a direct call to controller to disable mvnt
+        InputManager.im.InputModeDialogue();
+        InputManager.im.notifyCancelButtonObservers += ExitDialogue;
 
         if (!isDisplayingBox)
         {
@@ -201,9 +209,11 @@ public class DialogueManager : MonoBehaviour
 
     //CLEANS UP --  SAFE TO CALL
     public void ExitDialogue() {
-        Debug.Log("exiting dialogue");
+        InputManager.im.notifyCancelButtonObservers -= ExitDialogue;
+
         ClearDialogueCanvas();
         canChoose = false;
+
         if (InputManager.im)
         {
             Debug.Log("Changing input mode to direct...");

@@ -18,11 +18,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip main;
 
     private void Awake() {
-        if (active == null) { active = this; }
+        if (active == null)
+        {
+            active = this;
+        }
         else { Destroy(this.gameObject); }
-
+        DontDestroyOnLoad(active.gameObject);
+        
         masterAudio = active.GetComponent<AudioSource>();
-
         activeSlaves = new List<GameObject>();
 
         InitMainLoop();
@@ -34,20 +37,24 @@ public class AudioManager : MonoBehaviour
         masterAudio.Play();
     }
 
-    public void SpawnSlaveAudio(Sample sample){
-       slaveAudioSourcePrefab.GetComponent<SlaveAudio>().clipToPlay = sample.clip;
-       GameObject _slave = Instantiate(slaveAudioSourcePrefab);
-       activeSlaves.Add(_slave);
+    public void SpawnSlaveAudio(Sample sample) {
+        slaveAudioSourcePrefab.GetComponent<SlaveAudio>().clipToPlay = sample.clip;
+        GameObject _slave = Instantiate(slaveAudioSourcePrefab);
+        _slave.transform.parent = this.transform;
+        activeSlaves.Add(_slave);
     }
 
-    public void DestroySalveAudio(Sample sample){
+    public void DestroySalveAudio(Sample sample) {
         GameObject _sToDestroy = null;
-        foreach(var _s in activeSlaves){
-            if(sample.clip == _s.GetComponent<SlaveAudio>().clipToPlay){
+        foreach (var _s in activeSlaves)
+        {
+            if (sample.clip == _s.GetComponent<SlaveAudio>().clipToPlay)
+            {
                 _sToDestroy = _s;
             }
         }
-        if(_sToDestroy != null){
+        if (_sToDestroy != null)
+        {
             activeSlaves.Remove(_sToDestroy);
             Destroy(_sToDestroy);
         }
@@ -57,13 +64,17 @@ public class AudioManager : MonoBehaviour
         Debug.Log("toggle filter = " + _filtered);
         if (_filtered)
         {
-            foreach(var _s in activeSlaves){
+            foreach (var _s in activeSlaves)
+            {
                 _s.GetComponent<AudioSource>().outputAudioMixerGroup = null;
             }
             _filtered = false;
             masterAudio.outputAudioMixerGroup = null;
-        }else{
-             foreach(var _s in activeSlaves){
+        }
+        else
+        {
+            foreach (var _s in activeSlaves)
+            {
                 _s.GetComponent<AudioSource>().outputAudioMixerGroup = filteredMix;
             }
             masterAudio.outputAudioMixerGroup = filteredMix;

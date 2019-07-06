@@ -42,7 +42,8 @@ public class PlayerControl : MonoBehaviour
 
     private bool AcceptsPlayerInput()
     {
-        if (InputManager.im.canWalk == true && InputManager.im.inputMode == InputMode.DirectControl)
+        //TODO: I removed canWalk check here -- if this is superfluous, remove it entirely later
+        if (InputManager.im.inputMode == InputMode.DirectControl)
         {
             return true;
         }

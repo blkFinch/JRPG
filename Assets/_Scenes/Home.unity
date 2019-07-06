@@ -2341,7 +2341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cde40a13e064794fb9d90c9955866f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToRead: lamp
+  sceneToRead: bed
 --- !u!135 &1815659769
 SphereCollider:
   m_ObjectHideFlags: 0
