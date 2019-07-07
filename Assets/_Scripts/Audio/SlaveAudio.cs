@@ -3,6 +3,8 @@ using UnityEngine;
 public class SlaveAudio : MonoBehaviour {
 
 	public AudioClip clipToPlay;
+
+	public Instrument instrument;
 	private AudioSource slave;
 
 	private void Awake() {

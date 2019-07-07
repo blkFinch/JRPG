@@ -4,7 +4,6 @@ public class SampleButton : MenuButton<SampleButton>
 {
 
     public Sample sample;
-    private bool isActive = false;
     private void Awake() {
         Button _sBtn = this.GetComponent<Button>();
         _sBtn.onClick.AddListener(PlaySample);
@@ -13,6 +12,8 @@ public class SampleButton : MenuButton<SampleButton>
 
 
     private void PlaySample() {
+        bool isActive = AudioManager.active.InstrumentIsPlaying(sample.instrument);
+        
         if (!isActive)
         {
             AudioManager.active.SpawnSlaveAudio(sample);

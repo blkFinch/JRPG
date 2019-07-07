@@ -57,6 +57,21 @@ public class InkManager : MonoBehaviour
        {
            return Hero.active.data.Name;
        });
+
+       //checks if type of sample is playing
+       story.BindExternalFunction("is_instrument_playing", (string _ins) =>{
+           return CheckSamplesForInstrument(_ins);
+       });
+    }
+
+    private bool CheckSamplesForInstrument(string _ins){
+        //convers string to enum
+        Instrument parsedInstrument = (Instrument)System.Enum.Parse( typeof(Instrument), _ins);
+        
+        if(parsedInstrument != null){
+            return AudioManager.active.InstrumentIsPlaying(parsedInstrument);
+        }
+        return false;
     }
 
     // READ / PROCESS INK

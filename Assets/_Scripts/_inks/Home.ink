@@ -7,7 +7,7 @@ INCLUDE Main.ink
     {&I'm not ready for bed... Maybe I should check my email...| Not yet.. | I'm not tired.}
 -> END
 
-=== lamp 
+=== item 
     #debug 
     Pick up an item?
     + [yeah!]
@@ -15,6 +15,15 @@ INCLUDE Main.ink
         -> pick_up_item -> END
     + [no!] -> END
 ->  END
+
+=== test_sample 
+    {
+        - is_instrument_playing("Bass"):
+            Bass is playing 
+        - else: 
+            Bass is not playing
+    }
+-> END
 
 === door
     {hero_name()}, this is the door...

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 4a8c889f67550bf408b13402176b0827, type: 3}
   sampleName: Drums
+  instrument: 1

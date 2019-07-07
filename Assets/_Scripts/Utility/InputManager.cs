@@ -82,7 +82,6 @@ public class InputManager : MonoBehaviour
 
         _v = CrossPlatformInputManager.GetAxisRaw("Vertical");
         _h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
-
     }
 
     //INPUT STATE MANAGEMENT

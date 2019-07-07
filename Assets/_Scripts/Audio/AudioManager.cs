@@ -39,6 +39,7 @@ public class AudioManager : MonoBehaviour
 
     public void SpawnSlaveAudio(Sample sample) {
         slaveAudioSourcePrefab.GetComponent<SlaveAudio>().clipToPlay = sample.clip;
+        slaveAudioSourcePrefab.GetComponent<SlaveAudio>().instrument = sample.instrument;
         GameObject _slave = Instantiate(slaveAudioSourcePrefab);
         _slave.transform.parent = this.transform;
         activeSlaves.Add(_slave);
@@ -58,6 +59,15 @@ public class AudioManager : MonoBehaviour
             activeSlaves.Remove(_sToDestroy);
             Destroy(_sToDestroy);
         }
+    }
+
+    public bool InstrumentIsPlaying(Instrument _instrument){
+        foreach (var sample in activeSlaves)
+        {
+            if(sample.GetComponent<SlaveAudio>().instrument == _instrument){ return true; }
+        }
+
+        return false;
     }
 
     public void toggleFilter() {

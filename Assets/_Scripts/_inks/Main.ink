@@ -9,6 +9,7 @@
 //-- check ItemDatabase for item id no.s
 EXTERNAL check_item(i) 
 EXTERNAL hero_name()
+EXTERNAL is_instrument_playing(s)
 
 //GLOBAL VARs
 
