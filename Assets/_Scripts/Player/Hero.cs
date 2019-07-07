@@ -47,6 +47,7 @@ public class Hero : MonoBehaviour
         data.inventoryData = new InventoryData();
         inventory = new Inventory();
         inventory.items = new List<Item>();
+        inventory.samples = new List<Sample>();
     }
 
     public void TakeDamage(int damage) {

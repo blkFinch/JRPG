@@ -12,4 +12,14 @@ public class Sample : ScriptableObject{
     public string sampleName;
 
     public Instrument instrument;
+
+    [SerializeField]
+    [Header("Never set id to 0! IDS must be unique")]
+    private int id;
+
+    public int Id {
+        get {
+            return id;
+        }
+    }
 }

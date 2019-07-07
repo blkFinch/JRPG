@@ -12,15 +12,15 @@ EXTERNAL hero_name()
 EXTERNAL is_instrument_playing(s)
 
 //GLOBAL VARs
-
-//OVERIDE
-VAR item_to_add = 1 
+//
+VAR item_to_add = 0
 VAR scene_to_load = "null"
+VAR sample_to_add = "null"
 
-=== default
-    !!! THIS IS DEFAULT SCENE PLEASE SET SCENE TO READ IN TalkingObject.cs !!!
--> END
 
+//CALLOUT METHODS
+// first set the desired global var then call these 
+//scenes to fire the corresponding method in InkManager.cs
 === pick_up_item
    #ADD_ITEM
 -> DONE
@@ -29,4 +29,39 @@ VAR scene_to_load = "null"
     #LOAD_SCENE
 ->END
 
+=== add_sample
+   #ADD_SAMPLE
+->END
 
+
+=== default
+    !!! THIS IS DEFAULT SCENE PLEASE SET SCENE TO READ IN TalkingObject.cs !!!
+-> END
+
+
+//DEBUGGING & TESTING
+=== item 
+    #debug 
+    Pick up an item?
+    + [yeah!]
+        ~ item_to_add = 1 
+        -> pick_up_item -> END
+    + [no!] -> END
+->  END
+
+=== sample
+    #debug
+    Add a sample?
+    +[ yeah!]
+    ~ sample_to_add = 1 
+    -> add_sample -> END 
+-> END
+
+=== test_sample 
+    {
+        - is_instrument_playing("Bass"):
+            Bass is playing 
+        - else: 
+            Bass is not playing
+    }
+-> END

@@ -13,3 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: fe38615692a364b41b64de600551f4fd, type: 3}
   sampleName: Bass
+  instrument: 0
+  id: 1

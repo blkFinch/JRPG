@@ -17,9 +17,15 @@ public class DisplayInventory : MonoBehaviour {
 	}
 
 	string InventoryString(){
-		string _s = "";
+		string _s = "Items:\n";
 		foreach(Item item in _inv.items){
 			_s += item.Name + "\n";
+		}
+		_s += "SAMPLES:\n";
+
+		foreach (var sample in _inv.samples)
+		{
+			_s += sample.name + "\n";
 		}
 		return _s;
 	}

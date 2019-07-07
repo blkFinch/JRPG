@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+    //TODO: make sure there is only one item and sample database
     public ItemDatabase itemDatabase;
+    public SampleDatabase sampleDatabse;
     public string activeSceneName;
-
 
     public static GameManager gm;
     private void Awake() {

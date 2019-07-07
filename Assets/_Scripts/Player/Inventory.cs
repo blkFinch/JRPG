@@ -1,56 +1,77 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
 
-public class Inventory{
-	private InventoryData inventoryData;
-	public List<Item> items;
+/*
+	For now inventory holds all items and samples. HeroData holds all information
+	about hero, and inventoryData holds all information about items/equipment/samples
+	anything that can be added or removed from hero...
+ */
+//TODO: consider splitting this into two scipts one for items one for samples
 
-	public void AddItem(Item item){
-		items.Add(item);
-	}
+public class Inventory
+{
+    //InventoryData is a serializable class to save all inventory 
+    private InventoryData inventoryData;
 
-	public void UseItem(Item item){
-		item.onUseItem.OnConsume();
-		items.Remove(item);
-	}
+    public List<Item> items;
+    public List<Sample> samples;
 
-	public bool HasItem(int id){
-		bool _hasItem = false;
-		foreach(Item item in items){
-			if(item.ID == id){ _hasItem = true;}
-		}
+    public void AddItem(Item item) {
+        items.Add(item);
+    }
 
-		return _hasItem;
-	}
+    public void AddSample(Sample sample) {
+        //Adds sample only if not already in inventory
+        bool _presentInList = samples.Any(item => item.Id == sample.Id);
+        if (!_presentInList) { samples.Add(sample); }
+    }
 
-	//SERIALIZATION 
-	//TODO: catch null reference exceptions during serial/deserial
-	public void SerializeInventory(){
-		inventoryData = Hero.active.data.inventoryData;
+    public void UseItem(Item item) {
+        item.onUseItem.OnConsume();
+        items.Remove(item);
+    }
 
-		foreach (var item in items)
-		{
-			inventoryData.AddId(item.ID);
-		}
-	}
+    public bool HasItem(int id) {
+        foreach (Item item in items)
+        {
+            if (item.ID == id) { return true; }
+        }
+        return false;
+    }
 
-	public void DeserializeInventory(){
-		inventoryData = Hero.active.data.inventoryData;
+    //SERIALIZATION 
+    public void SerializeInventory() {
+        inventoryData = Hero.active.data.inventoryData;
 
-		//dealing with weirdness from changing the save script this should never happen in production
-		// TODO: look at this later
-		if(inventoryData.s_items == null){ inventoryData.s_items = new List<int>(); } 
+        //saves the ids of all items
+        foreach (var item in items) { inventoryData.AddId(item.ID); }
 
-		foreach (var id in inventoryData.s_items)
+        //saves the ids of all samples
+        foreach (var sample in samples) { inventoryData.AddSampleId(sample.Id); }
+    }
+
+    public void DeserializeInventory() {
+        inventoryData = Hero.active.data.inventoryData;
+
+        //dealing with weirdness from changing the save script this should never happen in production
+        // TODO: look at this later
+        if (inventoryData.s_items == null) { inventoryData.s_items = new List<int>(); }
+
+        foreach (var id in inventoryData.s_items)
         {
             AddItemFromID(id);
         }
     }
 
-    public void AddItemFromID(int id)
-    {
+    public void AddItemFromID(int id) {
         Item itemToAdd = GameManager.gm.itemDatabase.GetItem(id);
-        this.AddItem(itemToAdd);
+        if (itemToAdd != null) { this.AddItem(itemToAdd); }
     }
+
+    public void AddSampleFromID(int id) {
+        Sample sampleToAdd = GameManager.gm.sampleDatabse.GetSample(id);
+        if (sampleToAdd != null) { this.AddSample(sampleToAdd); }
+    }
+
+
 }

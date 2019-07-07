@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [CreateAssetMenu(menuName = ("RPG/Item"))]
 public class Item : ScriptableObject
 {
@@ -18,6 +17,7 @@ public class Item : ScriptableObject
     private bool isKeyItem;
 
     [SerializeField]
+    [Header("Never set id to 0! IDs must be unique")]
     private int i_Id;
 
     public string Name
@@ -34,6 +34,7 @@ public class Item : ScriptableObject
     {
         get { return isKeyItem; }
     }
+
 
     public int ID
     {

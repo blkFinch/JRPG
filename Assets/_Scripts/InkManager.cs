@@ -151,11 +151,21 @@ public class InkManager : MonoBehaviour
         {
             changeSceneFromInk();
         }
+
+         if (story.currentTags.Contains("ADD_SAMPLE"))
+        {
+            addSampleFromInk();
+        }
     }
 
     private void addItemFromInk() {
         int id = (int)story.variablesState["item_to_add"];
         Hero.active.inventory.AddItemFromID(id);
+    }
+
+    private void addSampleFromInk(){
+        int id = (int)story.variablesState["sample_to_add"];
+        Hero.active.inventory.AddSampleFromID(id);
     }
 
     private void changeSceneFromInk() {
