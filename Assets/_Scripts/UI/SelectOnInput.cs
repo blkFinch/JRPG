@@ -21,15 +21,6 @@ public class SelectOnInput : MonoBehaviour {
         buttons = new ArrayList();
     }
 
-    // Use this for initialization
-    void Start () {
-		//in case you forget to set the eventSystem
-		//this will probably fail if there are multiple event systems -finch
-		if(!eventSystem){
-			eventSystem = FindObjectOfType<EventSystem>();
-		}
-    }
-
     public void AddButton(MenuButton _btn){
         buttons.Add(_btn);
     }
@@ -39,7 +30,6 @@ public class SelectOnInput : MonoBehaviour {
     {
         if (Input.GetAxisRaw ("Vertical") != 0 && buttonSelected == false) 
         {
-            Debug.Log("AXIS NOT 0");
             eventSystem.SetSelectedGameObject(selectedObject);
             buttonSelected = true;
         }

@@ -12,13 +12,14 @@ public class SamplerButton : MenuButton<SamplerButton>
 
     // Use this for initialization
     void Start() {
+        //This checks for sampler TODO: extract this to a KeyItemChecker script
         if (Hero.active.inventory.HasItem(2))
         {
-            this.gameObject.active = true;
+            this.gameObject.SetActive(true);
         }
         else
         {
-            this.gameObject.active = false;
+            this.gameObject.SetActive(false);
         }
 
     }

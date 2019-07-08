@@ -29,8 +29,6 @@ public class DialogueManager : MonoBehaviour
 		 this may cause confusion for other TalkingObjects in scene but 
 		 we'll see... -finch
 	 */
-    public delegate void OnDialogueChoice(int index);
-    public event OnDialogueChoice NotifyDialogueChoiceListeners; //TODO: remove this???
 
     //SINGLETON
     public static DialogueManager active;

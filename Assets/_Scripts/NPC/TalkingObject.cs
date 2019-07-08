@@ -14,13 +14,6 @@ public class TalkingObject : MonoBehaviour
     bool playerInRange;
     private PlayerControl _player;
 
-    private void OnEnable() {
-        InputManager.im.notifyActionButtonObservers += ActionButtonEvent;
-    }
-
-    private void OnDisable() {
-        InputManager.im.notifyActionButtonObservers -= ActionButtonEvent;
-    }
 
     /* 
 	Handles checking if player is close enough to talk to object
@@ -32,6 +25,7 @@ public class TalkingObject : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player")
         {
+            InputManager.im.notifyActionButtonObservers += ActionButtonEvent;
             playerInRange = true;
             _player = other.gameObject.GetComponent<PlayerControl>();
             _player.SpawnBang();
@@ -41,6 +35,7 @@ public class TalkingObject : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.tag == "Player")
         {
+            InputManager.im.notifyActionButtonObservers -= ActionButtonEvent;
             playerInRange = false;
             _player.DestroyBang();
         }

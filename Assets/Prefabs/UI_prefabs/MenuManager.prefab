@@ -55,5 +55,5 @@ MonoBehaviour:
     type: 2}
   ItemMenuPrefab: {fileID: 114346271195302646, guid: 377821117eb4958418caa2e230432e37,
     type: 2}
-  SamplerMenuPrefab: {fileID: 114694844969715644, guid: 1487488f04f4d884e9ca8090831a8d38,
+  SamplerMenuPrefab: {fileID: 114959950661162948, guid: f11d6679a025a854e80fb5db7355fc6b,
     type: 2}

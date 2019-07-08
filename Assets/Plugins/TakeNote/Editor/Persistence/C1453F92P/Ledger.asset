@@ -41,6 +41,15 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.8301887, g: 0.7903863, b: 0.27020293, a: 1}
+  - Title: REMOVE UNUSED SCRIPTS AND ASSETS
+    CreationDate: 7/7/2019 | 2:33 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.9150943, g: 0.14244394, b: 0.14244394, a: 1}
   CompletedTasks:
   - Title: Clean up folder structure
     CreationDate: 12/16/2018 | 11:59 PM

@@ -5,11 +5,15 @@ INCLUDE Main.ink
 === apt_door
     It's my apartment...
     + [Go Home...?] 
-        ~ scene_to_load = "Home"
-        -> load_scene ->END
+        -> load_scene("Home")
     + [Not Yet...] ->END
 ->END
 
 === strange_man
-    Hey bud, can you play me a sick bassline with that thing??
+    {
+        - is_instrument_playing("Bass"):
+            Fuck yeah bro that's wicked boss AND hella dope!
+        - else: 
+            Hey man you got a good bassline for me today?
+    }
 ->END

@@ -18,17 +18,18 @@ public class AudioManager : MonoBehaviour
     public AudioClip main;
 
     private void Awake() {
-        if (active == null)
-        {
-            active = this;
-        }
-        else { Destroy(this.gameObject); }
+        if (active != null) { Destroy(this.gameObject); }
+        else { active = this; }
         DontDestroyOnLoad(active.gameObject);
-        
+
         masterAudio = active.GetComponent<AudioSource>();
         activeSlaves = new List<GameObject>();
 
         InitMainLoop();
+    }
+
+    private void OnDestroy() {
+        Debug.Log("Audio Manager destroyed");
     }
 
     private void InitMainLoop() {
@@ -61,12 +62,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public bool InstrumentIsPlaying(Instrument _instrument){
+    public bool InstrumentIsPlaying(Instrument _instrument) {
         foreach (var sample in activeSlaves)
         {
-            if(sample.GetComponent<SlaveAudio>().instrument == _instrument){ return true; }
+            if (sample.GetComponent<SlaveAudio>().instrument == _instrument) { return true; }
         }
-
         return false;
     }
 

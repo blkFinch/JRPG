@@ -113,35 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &39785547
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 39785548}
-  m_Layer: 0
-  m_Name: Audio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &39785548
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 39785547}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 288.7491, y: 335.57117, z: -16.520975}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1201226093}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &139965340
 Prefab:
   m_ObjectHideFlags: 0
@@ -672,6 +643,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &516977521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 516977519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cde40a13e064794fb9d90c9955866f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToRead: add_new_sample
 --- !u!135 &516977522
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1346,12 +1329,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1201226092}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 288.7491, y: 335.57117, z: -16.520975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 39785548}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1201226094
 AudioSource:
@@ -2233,7 +2216,7 @@ GameObject:
   - component: {fileID: 1813495503}
   m_Layer: 5
   m_Name: DEBUG
-  m_TagString: Untagged
+  m_TagString: RemoveLater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2347,7 +2330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cde40a13e064794fb9d90c9955866f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToRead: test_sample
+  sceneToRead: sample_2
 --- !u!135 &1815659769
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2377,6 +2360,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1313909, y: 0.727227, z: 0.2265486}
   m_Center: {x: -0.000033915043, y: 0.36427206, z: -0.006095797}
+--- !u!135 &1822528462
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1822528457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 1.2033157
+  m_Center: {x: -0.00003385544, y: 0.36427212, z: -0.6437161}
 --- !u!1 &1848840618
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,6 +2750,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114794907297933718, guid: 5749f60a7861e4842bedd093b0307e91,
+        type: 2}
+      propertyPath: SamplerMenuPrefab
+      value: 
+      objectReference: {fileID: 114959950661162948, guid: f11d6679a025a854e80fb5db7355fc6b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5749f60a7861e4842bedd093b0307e91, type: 2}
   m_IsPrefabAsset: 0

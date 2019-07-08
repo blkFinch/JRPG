@@ -32,7 +32,6 @@ public class InkManager : MonoBehaviour
     // INIT/RESET METHODS
     //
     void Start() {
-        
         InitInk();
     }
 
@@ -67,11 +66,7 @@ public class InkManager : MonoBehaviour
     private bool CheckSamplesForInstrument(string _ins){
         //convers string to enum
         Instrument parsedInstrument = (Instrument)System.Enum.Parse( typeof(Instrument), _ins);
-        
-        if(parsedInstrument != null){
-            return AudioManager.active.InstrumentIsPlaying(parsedInstrument);
-        }
-        return false;
+        return AudioManager.active.InstrumentIsPlaying(parsedInstrument);
     }
 
     // READ / PROCESS INK
@@ -164,6 +159,7 @@ public class InkManager : MonoBehaviour
     }
 
     private void addSampleFromInk(){
+        Debug.Log("sample id : " + story.variablesState["sample_to_add"]);
         int id = (int)story.variablesState["sample_to_add"];
         Hero.active.inventory.AddSampleFromID(id);
     }
