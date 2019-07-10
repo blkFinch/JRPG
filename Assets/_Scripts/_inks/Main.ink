@@ -29,7 +29,7 @@ VAR sample_to_add = 0
 
 === load_scene(scene_name)
     ~ scene_to_load = scene_name
-    -> _load_scene
+    -> _load_scene -> END 
 
 === _load_scene
     #LOAD_SCENE

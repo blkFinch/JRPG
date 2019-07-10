@@ -21,16 +21,6 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.8301887, g: 0.7903863, b: 0.27020293, a: 1}
-  - Title: test CheckSamplesForInstrument
-    CreationDate: 7/6/2019 | 10:46 PM
-    CompletionDate: 
-    HasDetails: 1
-    Details: test misspellings of instrumensts etc.. see how we can make that method
-      safe
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.8301887, g: 0.7903863, b: 0.27020293, a: 1}
   - Title: test all ink methods!
     CreationDate: 7/6/2019 | 10:47 PM
     CompletionDate: 
@@ -379,6 +369,27 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.83137256, g: 0.30316767, b: 0.27058825, a: 1}
+  - Title: test CheckSamplesForInstrument
+    CreationDate: 7/6/2019 | 10:46 PM
+    CompletionDate: 7/8/2019 | 11:11 PM
+    HasDetails: 1
+    Details: test misspellings of instrumensts etc.. see how we can make that method
+      safe
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.8301887, g: 0.7903863, b: 0.27020293, a: 1}
+  - Title: Freeze player while set is gone
+    CreationDate: 7/8/2019 | 11:14 PM
+    CompletionDate: 7/8/2019 | 11:27 PM
+    HasDetails: 1
+    Details: "player controller needs player to have physics to work however player
+      will fall without a collider underneath him. \n== Player should freeze while
+      scene transitions\n- OR \nMake player movement entire kinomatic"
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
   DeferredTasks:
   - Title: world > combat > victory > world flow
     CreationDate: 12/17/2018 | 12:03 AM

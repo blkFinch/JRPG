@@ -168,7 +168,8 @@ public class InkManager : MonoBehaviour
         string sceneToLoad = (string)story.variablesState["scene_to_load"];
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
-            GameManager.gm.LoadScene(sceneToLoad);
+            // GameManager.gm.LoadScene(sceneToLoad);
+            SetManager.active.LoadSet(sceneToLoad);
         }
         else
         {
