@@ -7,22 +7,28 @@ public class SampleButton : MenuButton<SampleButton>
     private void Awake() {
         Button _sBtn = this.GetComponent<Button>();
         _sBtn.onClick.AddListener(PlaySample);
+        ToggleGraohic();
     }
 
+    private void ToggleGraohic(){
+        GetComponentInChildren<Outline>().enabled = IsActive();
+    }
 
+    private bool IsActive(){
+        return AudioManager.active.InstrumentIsPlaying(sample.instrument);
+    }
 
     private void PlaySample() {
-        bool isActive = AudioManager.active.InstrumentIsPlaying(sample.instrument);
         
-        if (!isActive)
+        if (!IsActive())
         {
             AudioManager.active.SpawnSlaveAudio(sample);
-			isActive = true;
+            ToggleGraohic();
         }
         else
         {
            AudioManager.active.DestroySalveAudio(sample);
-		   isActive = false;
+           ToggleGraohic();
         }
     }
 

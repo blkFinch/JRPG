@@ -59,7 +59,7 @@ public class DialogueManager : MonoBehaviour
         if (string.IsNullOrEmpty(text))
         {
             Debug.Log(" DM recieved empty or null string");
-            ExitDialogue();
+            ExitDialogue(); 
         }
         else
         {
@@ -81,7 +81,6 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("notifying listeners! choice index: " + index);
 
         ClearDialogueCanvas();
-        // NotifyDialogueChoiceListeners(index);
 
         InkManager.active.ChooseChoice(index);
     }
@@ -179,6 +178,7 @@ public class DialogueManager : MonoBehaviour
     //Should either pick selectec choice or exit dialogue if no choices available
     private void SelectActiveChoice(){
         if(activeChoices.Count > 0){
+            canChoose = false;
             PlayerDialogueChoice(activeChoiceIndex);
         }
     }

@@ -40,6 +40,34 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.9150943, g: 0.14244394, b: 0.14244394, a: 1}
+  - Title: Ink method check if player has sample
+    CreationDate: 7/10/2019 | 2:32 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
+  - Title: add hold tag to ink script to wait for player input
+    CreationDate: 7/10/2019 | 11:20 PM
+    CompletionDate: 
+    HasDetails: 1
+    Details: should be able to display text and wait for player input to display next
+      text
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
+  - Title: rename load_scene in ink to load_set
+    CreationDate: 7/10/2019 | 11:47 PM
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
   CompletedTasks:
   - Title: Clean up folder structure
     CreationDate: 12/16/2018 | 11:59 PM

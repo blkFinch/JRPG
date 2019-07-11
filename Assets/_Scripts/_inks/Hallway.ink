@@ -1,4 +1,3 @@
-INCLUDE Main.ink
 
 //Apartment Hallway
 //

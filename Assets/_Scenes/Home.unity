@@ -366,6 +366,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114525315031303488, guid: bff5e49344c6cc3408434c7a0742aef2,
+        type: 2}
+      propertyPath: inkScript
+      value: 
+      objectReference: {fileID: 4900000, guid: 02510c7ab2f28f647839533ffc4c25ab, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bff5e49344c6cc3408434c7a0742aef2, type: 2}
   m_IsPrefabAsset: 0
@@ -388,6 +393,7 @@ MonoBehaviour:
   sets:
   - {fileID: 11400000, guid: 3765b945fafa2e245aacf7cfa6b00f9b, type: 2}
   - {fileID: 11400000, guid: edc958a95a215994b91dc408b6657949, type: 2}
+  handleInit: 1
 --- !u!1001 &1396227535
 Prefab:
   m_ObjectHideFlags: 0
