@@ -12,13 +12,15 @@ INCLUDE Hallway.ink
 
 //checks if player has item of id i in inventory
 //-- check ItemDatabase for item id no.s
-EXTERNAL check_item(i) 
+EXTERNAL check_has_item(i) 
+EXTERNAL check_has_sample(i) 
 EXTERNAL hero_name()
 EXTERNAL is_instrument_playing(s)
 
 //GLOBAL VARs
 VAR item_to_add = 0
 VAR scene_to_load = "null"
+VAR set_to_load = "null"
 VAR sample_to_add = 0
 
 
@@ -43,13 +45,19 @@ VAR sample_to_add = 0
    #ADD_SAMPLE
 ->->
 
-// TODO: rename load_set and normalize usage
 === load_scene(scene_name)
     ~ scene_to_load = scene_name
     -> _load_scene
 = _load_scene
     #LOAD_SCENE
-->->
+->END
+
+=== load_set(set_name)
+    ~ set_to_load = set_name
+    -> _load_set
+= _load_set
+    #LOAD_SET
+->END
 
 
 === default

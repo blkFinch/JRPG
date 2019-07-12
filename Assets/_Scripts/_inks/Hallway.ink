@@ -4,7 +4,7 @@
 === apt_door
     It's my apartment...
     + [Go Home...?] 
-        -> load_scene("Home")
+        -> load_set("Home") 
     + [Not Yet...] ->END
 ->END
 

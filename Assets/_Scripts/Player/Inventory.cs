@@ -39,6 +39,14 @@ public class Inventory
         return false;
     }
 
+    public bool HasSample(int id) {
+        foreach (Sample sample in samples)
+        {
+            if (sample.Id == id) { return true; }
+        }
+        return false;
+    }
+
     //SERIALIZATION 
     public void SerializeInventory() {
         inventoryData = Hero.active.data.inventoryData;

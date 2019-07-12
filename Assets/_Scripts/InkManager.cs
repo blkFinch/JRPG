@@ -46,7 +46,7 @@ public class InkManager : MonoBehaviour
 
     private void initExternalMethods() {
         //checks if hero has a given item
-        story.BindExternalFunction("check_item", (int id) =>
+        story.BindExternalFunction("check_has_item", (int id) =>
       {
           return Hero.active.inventory.HasItem(id);
       });
@@ -57,15 +57,22 @@ public class InkManager : MonoBehaviour
            return Hero.active.data.Name;
        });
 
-       //checks if type of sample is playing
-       story.BindExternalFunction("is_instrument_playing", (string _ins) =>{
-           return CheckSamplesForInstrument(_ins);
-       });
+        //checks if type of sample is playing
+        story.BindExternalFunction("is_instrument_playing", (string _ins) =>
+        {
+            return CheckSamplesForInstrument(_ins);
+        });
+
+        //checks if player has sample
+        story.BindExternalFunction("check_has_sample", (int id) =>
+      {
+          return Hero.active.inventory.HasSample(id);
+      });
     }
 
-    private bool CheckSamplesForInstrument(string _ins){
+    private bool CheckSamplesForInstrument(string _ins) {
         //convers string to enum
-        Instrument parsedInstrument = (Instrument)System.Enum.Parse( typeof(Instrument), _ins);
+        Instrument parsedInstrument = (Instrument)System.Enum.Parse(typeof(Instrument), _ins);
         return AudioManager.active.InstrumentIsPlaying(parsedInstrument);
     }
 
@@ -104,7 +111,7 @@ public class InkManager : MonoBehaviour
         StartCoroutine(LateChoice(index));
     }
 
-    private IEnumerator LateChoice(int index){
+    private IEnumerator LateChoice(int index) {
         yield return new WaitForEndOfFrame();
         story.ChooseChoiceIndex(index);
         ReadInk();
@@ -147,7 +154,12 @@ public class InkManager : MonoBehaviour
             changeSceneFromInk();
         }
 
-         if (story.currentTags.Contains("ADD_SAMPLE"))
+         if (story.currentTags.Contains("LOAD_SET"))
+        {
+            loadSetFromInk();
+        }
+
+        if (story.currentTags.Contains("ADD_SAMPLE"))
         {
             addSampleFromInk();
         }
@@ -158,18 +170,29 @@ public class InkManager : MonoBehaviour
         Hero.active.inventory.AddItemFromID(id);
     }
 
-    private void addSampleFromInk(){
+    private void addSampleFromInk() {
         Debug.Log("sample id : " + story.variablesState["sample_to_add"]);
         int id = (int)story.variablesState["sample_to_add"];
         Hero.active.inventory.AddSampleFromID(id);
+    }
+
+    private void loadSetFromInk() {
+        string setToLoad = (string)story.variablesState["set_to_load"];
+        if (!string.IsNullOrEmpty(setToLoad))
+        {
+            SetManager.active.LoadSet(setToLoad);
+        }
+        else
+        {
+            Debug.Log("Invalid set, Please check value of ink variable 'scene_to_load'");
+        }
     }
 
     private void changeSceneFromInk() {
         string sceneToLoad = (string)story.variablesState["scene_to_load"];
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
-            // GameManager.gm.LoadScene(sceneToLoad);
-            SetManager.active.LoadSet(sceneToLoad);
+            GameManager.gm.LoadScene(sceneToLoad);
         }
         else
         {
