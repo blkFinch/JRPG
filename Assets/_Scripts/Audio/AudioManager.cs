@@ -63,6 +63,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public bool InstrumentIsPlaying(Instrument _instrument) {
+        Debug.Log("Is instrument playing>" + _instrument);
         foreach (var sample in activeSlaves)
         {
             if (sample.GetComponent<SlaveAudio>().instrument == _instrument) { return true; }

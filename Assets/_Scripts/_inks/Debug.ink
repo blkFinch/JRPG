@@ -19,8 +19,12 @@
     #debug
     Add a sample?
     +[ yeah!]
-        -> add_sample(1) ->
-        you got a sample!
+        -> add_sample(1) -> another
+
+= another
+    add another?
+    + [ yes!]
+        -> add_sample(2) -> END
 -> END
 
 === test_sample 
