@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d769c2893ada2a84fbe20ce478ffcc41, type: 3}
+  m_Name: ChillElevatorPad
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 8d10308ab1e9d684da20d29771b765af, type: 3}
+  sampleName: Chill Elevator Pad
+  bpm: 102
+  instrument: 3
+  id: 3

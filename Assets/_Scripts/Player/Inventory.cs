@@ -69,6 +69,11 @@ public class Inventory
         {
             AddItemFromID(id);
         }
+
+        foreach (var sample_id in inventoryData.s_samples)
+        {
+            AddSampleFromID(sample_id);
+        }
     }
 
     public void AddItemFromID(int id) {

@@ -56,6 +56,7 @@ MonoBehaviour:
   data:
     inventoryData:
       s_items: 
+      s_samples: 
 --- !u!114 &114395465270229050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: 6392c936032dffa45834730b30441cec, type: 2}
+  sampleDatabse: {fileID: 0}
   activeSceneName: 
 --- !u!114 &114718087358657184
 MonoBehaviour:

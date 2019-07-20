@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d769c2893ada2a84fbe20ce478ffcc41, type: 3}
   m_Name: Bass
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: fe38615692a364b41b64de600551f4fd, type: 3}
+  clip: {fileID: 8300000, guid: 566e076745a7c624a842ad3be4f16acb, type: 3}
   sampleName: Bass
+  bpm: 102
   instrument: 0
   id: 1

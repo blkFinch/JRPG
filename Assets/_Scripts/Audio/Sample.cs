@@ -11,6 +11,9 @@ public class Sample : ScriptableObject{
     public AudioClip clip;
     public string sampleName;
 
+    [SerializeField]
+    private float bpm = 120f;
+
     public Instrument instrument;
 
     [SerializeField]
@@ -20,6 +23,16 @@ public class Sample : ScriptableObject{
     public int Id {
         get {
             return id;
+        }
+    }
+
+    public float Bpm {
+        get {
+            return bpm;
+        }
+
+        set {
+            bpm = value;
         }
     }
 }

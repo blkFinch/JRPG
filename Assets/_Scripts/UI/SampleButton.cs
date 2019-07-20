@@ -32,7 +32,7 @@ public class SampleButton : MenuButton<SampleButton>
         
         if (!IsActive())
         {
-            AudioManager.active.SpawnSlaveAudio(sample);
+            AudioManager.active.LaunchSample(sample);
             ToggleGraohic();
         }
         else

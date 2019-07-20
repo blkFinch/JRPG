@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d769c2893ada2a84fbe20ce478ffcc41, type: 3}
   m_Name: Drums
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 4a8c889f67550bf408b13402176b0827, type: 3}
+  clip: {fileID: 8300000, guid: cdd02ebd474ca674dba0fffbbad6156e, type: 3}
   sampleName: Drums
+  bpm: 102
   instrument: 1
   id: 2

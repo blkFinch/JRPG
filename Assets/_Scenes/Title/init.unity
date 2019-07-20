@@ -5408,9 +5408,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114395465270229050, guid: 49859afccb4402446a027edb68a6cc88,
         type: 2}
-      propertyPath: itemDatabase
+      propertyPath: sampleDatabse
       value: 
-      objectReference: {fileID: 11400000, guid: 6392c936032dffa45834730b30441cec,
+      objectReference: {fileID: 11400000, guid: dc961ac71e1b18642a41b26a63326f86,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49859afccb4402446a027edb68a6cc88, type: 2}
@@ -6504,7 +6504,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LASTEST FANTASY
+  m_Text: SAMPLE FANTASY
 --- !u!222 &1407915080
 CanvasRenderer:
   m_ObjectHideFlags: 0

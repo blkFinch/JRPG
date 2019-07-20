@@ -15,6 +15,7 @@ public class InkManager : MonoBehaviour
     public TextAsset inkScript;
     public Story story;
 
+
     //story text is the active string from the story
     string storyText;
     public string StoryText {
@@ -82,11 +83,10 @@ public class InkManager : MonoBehaviour
 
         story.ChoosePathString(scene);
         ReadInk(); //loads ink story while it can continue
-        SendTextToDialogueManager(); //sends the story as a string to be displayed
     }
 
 
-    public void ReadInk() {
+    private void ReadInk() {
         //Catch a broken story link
         if (!story.canContinue) { DialogueManager.active.ExitDialogue(); }
 
@@ -115,7 +115,6 @@ public class InkManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         story.ChooseChoiceIndex(index);
         ReadInk();
-        SendTextToDialogueManager();
     }
 
     /*
@@ -163,6 +162,8 @@ public class InkManager : MonoBehaviour
         {
             addSampleFromInk();
         }
+
+        SendTextToDialogueManager();
     }
 
     private void addItemFromInk() {

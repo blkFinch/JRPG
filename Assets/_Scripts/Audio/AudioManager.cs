@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    //TODO: refactor this to be handled by slider
+    public Slider f_slider;
     public static AudioManager active;
     public static AudioSource masterAudio;
 
@@ -13,9 +16,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioMixerGroup filteredMix;
     private bool _filtered = false;
-    //TODO: extract this out to it's own script -MasterClip
-    //master loop to set time
-    public AudioClip main;
 
     private void Awake() {
         if (active != null) { Destroy(this.gameObject); }
@@ -24,26 +24,34 @@ public class AudioManager : MonoBehaviour
 
         masterAudio = active.GetComponent<AudioSource>();
         activeSlaves = new List<GameObject>();
-
-        InitMainLoop();
     }
 
+    public void registerFilterSlifer(Slider slider) {
+        f_slider = slider;
+        f_slider.onValueChanged.AddListener(delegate { AdjustFilterCutoff(); });
+    }
     private void OnDestroy() {
         Debug.Log("Audio Manager destroyed");
     }
 
-    private void InitMainLoop() {
-        masterAudio.clip = main;
-        masterAudio.loop = true;
-        masterAudio.Play();
+    public void LaunchSample(Sample sample) {
+        SpawnSlaveAudio(sample);
     }
 
-    public void SpawnSlaveAudio(Sample sample) {
+    private void SpawnSlaveAudio(Sample sample) {
         slaveAudioSourcePrefab.GetComponent<SlaveAudio>().clipToPlay = sample.clip;
         slaveAudioSourcePrefab.GetComponent<SlaveAudio>().instrument = sample.instrument;
         GameObject _slave = Instantiate(slaveAudioSourcePrefab);
         _slave.transform.parent = this.transform;
         activeSlaves.Add(_slave);
+        setMaster();
+    }
+
+    //Sets the master audio source to keep time
+    private void setMaster() {
+        if(activeSlaves.Count > 0){
+            masterAudio = activeSlaves[0].GetComponent<AudioSource>();
+        }
     }
 
     public void DestroySalveAudio(Sample sample) {
@@ -58,6 +66,7 @@ public class AudioManager : MonoBehaviour
         if (_sToDestroy != null)
         {
             activeSlaves.Remove(_sToDestroy);
+            setMaster();
             Destroy(_sToDestroy);
         }
     }
@@ -91,6 +100,11 @@ public class AudioManager : MonoBehaviour
             masterAudio.outputAudioMixerGroup = filteredMix;
             _filtered = true;
         }
+    }
+
+    public void AdjustFilterCutoff() {
+        Debug.Log("setting cutoff freq" + f_slider.value);
+        filteredMix.audioMixer.SetFloat("cutoff", f_slider.value);
     }
 
 }

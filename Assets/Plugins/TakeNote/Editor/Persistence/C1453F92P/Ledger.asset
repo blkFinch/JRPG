@@ -21,49 +21,12 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.8301887, g: 0.7903863, b: 0.27020293, a: 1}
-  - Title: test all ink methods!
-    CreationDate: 7/6/2019 | 10:47 PM
-    CompletionDate: 
-    HasDetails: 1
-    Details: make sure nothing will crash with when trying to add non existent ids
-      etc...
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.8301887, g: 0.7903863, b: 0.27020293, a: 1}
-  - Title: REMOVE UNUSED SCRIPTS AND ASSETS
-    CreationDate: 7/7/2019 | 2:33 PM
-    CompletionDate: 
-    HasDetails: 0
-    Details: 
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.9150943, g: 0.14244394, b: 0.14244394, a: 1}
-  - Title: Ink method check if player has sample
-    CreationDate: 7/10/2019 | 2:32 PM
-    CompletionDate: 
-    HasDetails: 0
-    Details: 
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
   - Title: add hold tag to ink script to wait for player input
     CreationDate: 7/10/2019 | 11:20 PM
     CompletionDate: 
     HasDetails: 1
     Details: should be able to display text and wait for player input to display next
       text
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
-  - Title: rename load_scene in ink to load_set
-    CreationDate: 7/10/2019 | 11:47 PM
-    CompletionDate: 
-    HasDetails: 0
-    Details: 
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
@@ -418,6 +381,52 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
+  - Title: Ink method check if player has sample
+    CreationDate: 7/10/2019 | 2:32 PM
+    CompletionDate: 7/11/2019 | 8:44 PM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
+  - Title: rename load_scene in ink to load_set
+    CreationDate: 7/10/2019 | 11:47 PM
+    CompletionDate: 7/11/2019 | 8:44 PM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
+  - Title: test all ink methods!
+    CreationDate: 7/6/2019 | 10:47 PM
+    CompletionDate: 7/11/2019 | 8:44 PM
+    HasDetails: 1
+    Details: make sure nothing will crash with when trying to add non existent ids
+      etc...
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.8301887, g: 0.7903863, b: 0.27020293, a: 1}
+  - Title: REMOVE UNUSED SCRIPTS AND ASSETS
+    CreationDate: 7/7/2019 | 2:33 PM
+    CompletionDate: 7/13/2019 | 9:02 PM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.9150943, g: 0.14244394, b: 0.14244394, a: 1}
+  - Title: Add filter button to sampler menu
+    CreationDate: 7/11/2019 | 8:45 PM
+    CompletionDate: 7/14/2019 | 1:10 PM
+    HasDetails: 0
+    Details: 
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0.2588235, b: 0.8717006, a: 1}
   DeferredTasks:
   - Title: world > combat > victory > world flow
     CreationDate: 12/17/2018 | 12:03 AM

@@ -14,6 +14,15 @@
 ->END
 
 === sp303
+    {
+        -not check_has_item(2):
+            -> no_303
+        - else: 
+            {&it's a desk...| Nothing to see here!}
+            -> END
+    }
+
+= no_303
     #internal 
     Hey- it's my trusty 303. I should take it along just in case. Gotta have my sampler!
     +  {not check_has_item(2)} [Pick it Up?] 
