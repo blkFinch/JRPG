@@ -35,3 +35,9 @@
             Bass is not playing
     }
 -> END
+
+== test_pause 
+        This sentence should be displayed first
+        + [$pause] 
+                then this text
+->END 

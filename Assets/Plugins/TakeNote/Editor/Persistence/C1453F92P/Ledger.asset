@@ -31,6 +31,17 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.25943398, g: 0.37486032, b: 1, a: 1}
+  - Title: Clean dialogue manager
+    CreationDate: 8/6/2019 | 12:17 AM
+    CompletionDate: 
+    HasDetails: 1
+    Details: 'Dialogue Manager.cs needs to be broken into smaller classes
+
+      DialogueDisply and ChoiceDisplay etc...'
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 0
+    DrawColor: {r: 1, g: 1, b: 1, a: 1}
   CompletedTasks:
   - Title: Clean up folder structure
     CreationDate: 12/16/2018 | 11:59 PM

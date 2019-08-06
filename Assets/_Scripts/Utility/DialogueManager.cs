@@ -69,7 +69,9 @@ public class DialogueManager : MonoBehaviour
 
             //Display data
             DisplayText();
-            if (this.activeChoices.Safe().Any()) { DisplayChoices(); }
+            if (this.activeChoices.Safe().Any()) { 
+                DisplayChoices(); 
+            }
 
             //Realign Data To UI
             StartCoroutine(TouchLayout()); //TODO: find better solution	
@@ -102,6 +104,15 @@ public class DialogueManager : MonoBehaviour
     //TODO: Instead of waiting for a second - lets make that action button event call the choices
     private IEnumerator waitToDisplayChoices() {
         yield return new WaitForSeconds(choiceDelay);
+        if (activeChoices[0] != "$pause")
+        {
+            SpawnChoiceButtons();
+            ActiveChoice(0);
+        }
+        canChoose = true;
+    }
+
+    private void SpawnChoiceButtons() {
         for (int i = 0; i < activeChoices.Count; i++)
         {
             Button button = Instantiate(choiceButtonPrefab);
@@ -115,8 +126,6 @@ public class DialogueManager : MonoBehaviour
             activeChoiceButtons.Add(button);
         }
         StartCoroutine(TouchLayout());
-        ActiveChoice(0);
-        canChoose = true;
     }
 
     //DISPLAY TEXT TO SCREEN
@@ -177,6 +186,7 @@ public class DialogueManager : MonoBehaviour
 
     //Should either pick selectec choice or exit dialogue if no choices available
     private void SelectActiveChoice(){
+        Debug.Log("Selecting active choice");
         if(activeChoices.Count > 0){
             canChoose = false;
             PlayerDialogueChoice(activeChoiceIndex);
